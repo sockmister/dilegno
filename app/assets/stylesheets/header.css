@@ -1,0 +1,35 @@
+/*
+Description: CSS file for the main page.
+*/
+
+.header_div{
+	width: 940px;
+	height: 100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.header_logo_div {
+	width: 250px;
+	height: 100px;
+	float:left;
+}
+
+.header_nav_div {
+	width: 685px;
+	height: 100px;
+	float:left;
+}
+
+.header_nav_item > a {
+	width: 150px;
+	height: 100px;
+	float:left;
+	text-align:center;
+
+	font-family:"Times New Roman", Times, serif;
+	font-size:25px;
+	text-decoration: none;
+	color: #252525;
+	line-height: 100px;
+}

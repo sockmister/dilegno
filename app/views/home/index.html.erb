@@ -1,2 +1,43 @@
-<h1>Home#index</h1>
+<html lang="en-US">
+	<head>
+    <title>Kwicks Slideshow Example</title>
+
+  
+  </head>
+
+	<body>
+		<!-- div for black bar -->
+		<div class="slider_div">
+			<ul class='kwicks kwicks-horizontal'>
+
+				<!-- change to loop from featured images -->
+        <li class='kwicks-selected'></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+		</div>
+
+		<!-- script for kwicks -->
+		<script type='text/javascript'>
+      $(function() {
+        var $slideshow = $('.kwicks').kwicks({
+          size: 236,
+          minSize : 20,
+          spacing : 5
+        });
+
+        var numSlides = $slideshow.children().length,
+          speed = 3200,
+          curSlide = 0;
+
+        setInterval(function() {
+          $slideshow.kwicks('expand', ++curSlide % numSlides);
+        }, speed);
+      });
+    </script>
+	</body>
+</html>
+
 <p>Find me in app/views/home/index.html.erb</p>
