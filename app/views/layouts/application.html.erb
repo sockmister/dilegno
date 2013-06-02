@@ -13,13 +13,13 @@
 
 	  <div class="header_nav_div">
 	  	<div class="header_nav_item">
-	  		<a href="/home/index">Home</a>
+	  		<%= link_to "Home", :controller => "home", :action => "index" %>
 	  	</div>
 	  	<div class="header_nav_item">
-	  		<a href="/products/categories">Products</a>
+	  		<%= link_to "Products", :controller => "products", :action => "categories" %>
 	  	</div>
 	  	<div class="header_nav_item">
-	  		<a href="">About</a>
+	  		<%= link_to "About Us", :controller => "home", :action => "index" %>
 	  	</div>
 	  </div>
 	</div>
