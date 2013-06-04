@@ -1,6 +1,8 @@
 class Admin::CategoryController < AdminController
 	# display a list of all categories
 	def index
+		@categories = Category.all
+		
 	end
 
 	# return a form for creating a new category
@@ -9,6 +11,9 @@ class Admin::CategoryController < AdminController
 
 	# create a new category
 	def create
+		@category = Category.new(params[:category])
+		@category.save
+		redirect_to :action => "index"
 	end
 
 	# show a specific category
