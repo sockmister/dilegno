@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dilengo Workbench</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+	      <div class="well sidebar-nav">
+	        <ul class="nav nav-list">
+	          <li class="nav-header">Dilegno Workbench</li>
+						<!-- logo here -->
+						<li><img src="http://farm4.staticflickr.com/3818/8868588182_6d4da0df13.jpg" width="500" height="313" alt="Spring Sunset Sublime on the Pawnee"></li>
+
+						<li class="nav-header">Content Management</li>
+						<li class="<%= controller.class == Admin::CategoryController ? 'active' : '' %>">
+							<%= link_to "Featured Images", :controller => "category", :action => "index" %></li>
+							<li class="<%= controller.class == Admin::CategoryController ? 'active' : '' %>">
+	          	<%= link_to "Category", :controller => "category", :action => "index" %></li>
+	          <li class="<%= controller.class == Admin::CategoryController ? 'active' : '' %>">	
+	          	<%= link_to "Product", :controller => "category", :action => "index" %></li>
+	          <li><a href="#"></a></li>
+
+	          <li class="nav-header">Miscellaneous</li>
+	          <li class="<%= controller.class == Admin::CategoryController ? 'active' : '' %>">
+	          	<%= link_to "Dilengo's Information", :controller => "category", :action => "index" %></li>
+	        </ul>
+	      </div><!--/.well -->
+	    </div><!--/span3-->
+			<div class="span9">
+    		<%= yield %>	
+    	</div><!--/span9-->
+		</div><!--/row-fluid-->
+	</div>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
