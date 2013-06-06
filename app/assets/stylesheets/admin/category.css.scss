@@ -1,3 +1,36 @@
 // Place all the styles related to the admin/category controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.heading {
+	margin: 30px;
+	text-align:center;
+}
+
+.thumbnail {
+  text-align:center;
+  height: 260px;
+}
+
+.thumbnail > li {
+    display: inline-block;
+    *display:inline; /* ie7 fix */
+    float: none; /* this is the part that makes it work */
+    height: 300px;
+}
+
+.add_picture {
+	line-height:80px;
+}
+
+.the_content {
+	height:200px;
+}
+
+.the_content > h3 {
+	line-height:150px;
+}
+
+.the_actions{
+	height:60px;	
+}

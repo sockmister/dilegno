@@ -20,7 +20,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,4 +37,14 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 # Other gem
+# Image uploading
 gem 'paperclip'
+
+# twitter bootstrap + dependencies
+gem 'jquery-rails'
+gem 'therubyracer'
+gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails'
+
+# Application server
+gem 'thin'
