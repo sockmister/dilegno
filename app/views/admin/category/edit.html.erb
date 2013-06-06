@@ -1,0 +1,19 @@
+<div class="heading">
+  <h1>Your Categories</h1>
+</div>
+
+<!-- create a form for categories-->
+<div>
+	<legend> Edit </legend> 
+<%= form_for [:admin, @category] do |f| %>
+
+  <%= f.label :category_name %>
+  <%= f.text_field :name %>
+
+</br>
+  <%= f.submit "Update category", :class => "btn btn-primary"%>
+  <%= link_to "Cancel", {:controller => "category", :action => "index"}, :class => "btn btn-primary"  %>
+<% end %>
+
+
+</div>
