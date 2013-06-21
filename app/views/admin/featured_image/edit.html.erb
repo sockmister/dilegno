@@ -1,0 +1,31 @@
+<div class="heading">
+  <h1>Your Featured Images</h1>
+</div>
+
+<!-- create a form for categories-->
+<div>
+	<legend> Edit your featured image </legend> 
+<%= form_for @featured, :url => { :action => "create" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
+
+	<div class="fileupload fileupload-new" data-provides="fileupload">
+    <div class="fileupload-preview thumbnail" style="width: 860px; height: 460px;">
+      <img src="<%= @featured.image.url %>">
+    </div>
+  	<div>
+    	<span class="btn btn-file"><span class="fileupload-new">Select image</span>
+      <span class="fileupload-exists">Change</span><input type="file" id="featured_image_image" name="featured_image[image]" /></span>
+    	<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+    </div>
+	</div>
+</br>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, :class=>"field span9", :rows=>5 %>
+
+</br>
+  <%= f.submit "Update image", :class => "btn btn-primary"%>
+  <%= link_to "Cancel", {:controller => "featured_image", :action => "index"}, :class => "btn btn-primary"  %>
+<% end %>
+
+
+</div>

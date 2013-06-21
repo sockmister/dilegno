@@ -1,0 +1,36 @@
+<div class="heading">
+  <h1>Your Featured Images</h1>
+</div>
+ 
+ <ul class="thumbnails">
+  <li class="span3">
+    <div class="thumbnail">
+      <div class="add_picture">
+
+        <img data-src="" alt="">
+        <p>
+          <i class="icon-plus"></i>
+          <%= link_to "add", new_admin_featured_image_path%>
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <% @featured.each do |featured| %>
+    <li class="span3">
+      <div class="thumbnail">
+        <img data-src="" alt="">
+        <div class="the_content">
+          <img src="<%= featured.image.url %>">
+        </div>
+        <div class="the_actions">
+          <p>
+            <%= link_to (raw("<i class=\"icon-edit\"></i>")), edit_admin_featured_image_path(featured), :class => "btn btn-primary"  %>
+            <%= link_to (raw("<i class=\"icon-remove\"></i>")), admin_featured_image_path(featured), :method => :delete, :confirm => "You are removing your featured image. Proceed?", :class => "btn btn-primary"%>
+          </p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+
+</ul>
