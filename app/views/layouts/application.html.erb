@@ -9,20 +9,26 @@
   <div class="header_div">
 	  <div class="header_logo_div">
 	  	<!-- logo img -->
+	  	<%= link_to "Di Legno", :controller => "home", :action => "index" %>
 	  </div>
 
 	  <div class="header_nav_div">
-	  	<div class="header_nav_item">
-	  		<%= link_to "Home", :controller => "home", :action => "index" %>
-	  	</div>
-	  	<div class="header_nav_item">
-	  		<%= link_to "Products", :controller => "products", :action => "categories" %>
-	  	</div>
+
+	  	<% @categories.each do |cat| %>
+	  		<div class="header_nav_item">
+	  			<%= link_to cat.name, category_path(cat.id) %>
+
+	  		</div>	  		
+	  	<% end %>
+
 	  	<div class="header_nav_item">
 	  		<%= link_to "About Us", :controller => "home", :action => "index" %>
 	  	</div>
 	  </div>
+
 	</div>
+
+	<%= yield :secondary_header %>
 
 </head>
 <body>

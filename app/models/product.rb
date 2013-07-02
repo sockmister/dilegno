@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :category, :color, :description, :name, :sub_category, :price
+  attr_accessible :category, :color, :description, :name, :sub_category, :price, :category_id
 
   # TODO: 	validation for category and sub_category.
   # 				Each product must have a category.
@@ -8,4 +8,5 @@ class Product < ActiveRecord::Base
   # 				reference the category.
 
   has_many :product_images
+  has_one :category
 end

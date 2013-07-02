@@ -1,0 +1,100 @@
+// Place all the styles related to the product controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.product_content {
+	/*background: #fff;*/
+	padding: 20px;
+	width: 1159px;
+	float: left;
+
+	background: #FFFFFF;
+	margin: 0 auto;
+	/*padding: 0 70px;*/
+	position: relative;
+	z-index: 1;
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-top: none;
+	border-bottom: none;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 4px rgba(0,0,0,.3);
+	box-shadow: 0 0 4px rgba(0,0,0,.3)
+}
+
+.product_info {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+	padding-left: 10px;
+	width: 540px;
+	float: left;
+}
+
+.product_info_section {
+	margin: 0px 0px 10px 0px;
+	background: white;
+	-moz-box-shadow: 0 0 10px #999;
+	-webkit-box-shadow: 0 0 10px #999;
+	box-shadow: 0 0 10px #999;
+
+}
+
+.product_info_section_header {
+	padding: 15px 15px 2px 15px;
+	margin: 0px 10px 0px 10px;
+	border-bottom: solid #000;
+	border-bottom-width: 2px;
+	font-size: 18px;
+}
+
+.product_info_section_content {
+	padding: 15px 15px 15px 15px;
+	margin: 0px 10px 0px 10px;
+	font-size: 15px;
+}
+
+.product_info_color {
+	border: solid #000;
+	border-width: 1px;
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 0px 5px 0px 5px;
+}
+
+.product_info_color_palette{
+	height: 60px;
+}
+
+#galleria{ 
+	/*margin-right: auto;
+	margin-left: auto;*/
+	float: left;
+	width: 600px; 
+	height: 450px; 
+	background: white;
+	margin-bottom: 10px;
+	-moz-box-shadow: 0 0 10px #999;
+	-webkit-box-shadow: 0 0 10px #999;
+	box-shadow: 0 0 10px #999;
+}
+
+.galleria-container { 
+	margin-right: auto;
+	margin-left: auto;
+	width: 600px; 
+	height: 400px; 
+	background: white;
+	-moz-box-shadow: 0 0 7px #999;
+	-webkit-box-shadow: 0 0 7px #999;
+	box-shadow: 0 0 7px #999;
+}
+
+.product_galleria {
+	width: auto;
+	height: 400px;
+	float: left;
+}

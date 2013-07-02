@@ -51,3 +51,6 @@ gem 'jasny_bootstrap_extension_rails'
 
 # Application server
 gem 'thin'
+
+# Maintenance mode
+gem 'turnout'

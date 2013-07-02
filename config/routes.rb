@@ -4,10 +4,17 @@ Dilegno::Application.routes.draw do
   	resources :featured_image
   	resources :sub_category
   	resources :product
+
+    resources :product do
+      resources :product_image
+    end
 	end
 
-  get "products/categories"
+	resources :category
+  resources :sub_category
+  resources :product
+
+  # get "products/categories"
   get "home/index"
   root :to => "home#index"
-
 end

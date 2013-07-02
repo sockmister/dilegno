@@ -1,0 +1,73 @@
+<% content_for :secondary_header do %>
+	<div class="header_sec_div">
+		<div class="header_sec_content">
+
+			<div class="header_sec_logo_div" style="width: 1200px; float: left; text-align: left; padding-left: 50px">
+				<%= link_to @category.name, category_path(@category.id) %>
+				- Product Name
+			</div>
+
+			<!-- <div class="header_sec_nav_div">
+				<% @sub_category.each do |cat| %>
+		  		<div class="header_sec_nav_item">
+		  			<%= link_to cat.name, sub_category_path(cat.id) %>
+		  		</div>	  		
+		  	<% end %>
+	  	</div> -->
+		</div>
+	</div>	
+<% end %>
+
+<div class="product_content">
+	<div id="galleria">
+		<% @product_images.each do |image| %>
+			<%= image_tag(image.image.url, :class => "product_galleria") %>
+		<% end %>
+	</div>
+
+	<div class="product_info">
+		<div class="product_info_section">
+			<div class="product_info_section_header">
+				<strong>Description</strong>
+			</div>
+			<div class="product_info_section_content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis tristique nulla, sed lacinia massa consectetur blandit. Nunc pharetra consectetur quam non sollicitudin. Nulla tristique, ligula quis blandit lobortis, augue tellus faucibus odio, in aliquam nunc lacus ultrices sapien. Etiam et lobortis leo, ut fringilla dolor. Nam tristique odio quis lacus malesuada, sit amet ultrices orci tempus. In sed ligula dapibus dui volutpat pulvinar. Nam dolor est, dignissim nec facilisis sed, suscipit eu nisi. Curabitur eu sagittis lectus, non sodales tortor. Vivamus dignissim faucibus odio, non gravida sapien auctor a.
+			</div>
+		</div>
+
+		<div class="product_info_section">
+			<div class="product_info_section_header">
+				<strong>Dimensions</strong>
+			</div>
+			<div class="product_info_section_content">
+				850 x 804 x 630
+			</div>
+		</div>
+
+		<div class="product_info_section">
+			<div class="product_info_section_header">
+				<strong>Color</strong>
+			</div>
+			<div class="product_info_section_content">
+				<div class="product_info_color_palette">
+					<div class="product_info_color" style="background: #E01B5D">
+					</div>
+					<div class="product_info_color" style="background: #1930E0">
+					</div>
+					<div class="product_info_color" style="background: #694000">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+ <script>
+ 	Galleria.loadTheme('/assets/galleria/themes/classic/galleria.classic.min.js');
+ 	Galleria.configure({
+    transition: 'fade',
+    imageCrop: false,
+});
+ 	Galleria.run('#galleria');
+ </script>

@@ -1,4 +1,4 @@
 class SubCategory < ActiveRecord::Base
-  attr_accessible :name
-  belongs_to :category
+  attr_accessible :name, :category_id
+  has_one :category
 end
