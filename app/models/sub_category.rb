@@ -1,4 +1,7 @@
 class SubCategory < ActiveRecord::Base
   attr_accessible :name, :category_id
-  has_one :category
+
+  belongs_to :category
+
+  has_one :dilegno_image, as: :imageable
 end

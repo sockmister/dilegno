@@ -1,0 +1,29 @@
+<div class="heading">
+  <h1><%= @category.name %> Sub Categories</h1>
+</div>
+
+<!-- create a form for categories-->
+<div>
+	<legend> Edit sub category </legend> 
+
+<%= form_for @sub_category, :url => { :action => "create" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
+
+	<%= f.label :sub_category_name %>
+  <%= f.text_field :name %>
+
+	<div class="fileupload fileupload-new" data-provides="fileupload">
+  	<div class="fileupload-preview thumbnail" style="width: 860px; height: 460px;">
+	<img src="<%=@sub_category_image.image.url %>"></div>
+  	<div>
+    	<span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" id="featured_image_image" name="dilegno_image[image]" /></span>
+    	<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+    </div>
+	</div>
+	</br>
+
+	<%= f.submit "Update", :class => "btn btn-primary"%>
+  <%= link_to "Cancel", {:controller => "category", :action => "index"}, :class => "btn btn-primary"  %>
+<% end %>
+
+
+</div>

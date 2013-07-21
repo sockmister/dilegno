@@ -28,7 +28,7 @@
           <p>
             <%= link_to (raw("<i class=\"icon-edit\"></i>")), edit_admin_category_path(category), :class => "btn btn-primary"  %>
             <%= link_to (raw("<i class=\"icon-remove\"></i>")), admin_category_path(category), :method => :delete, :confirm => "Hey, you are deleting a category. \nYou probably already know, but this means its sub-categories will also be deleted, and products associated with this category have to be re-assgined.\nProceed?", :class => "btn btn-primary"%>
-            <%= link_to "Sub-Categories", admin_category_path(category), :class => "btn btn-primary"  %>
+            <%= link_to "Sub-Categories", admin_category_sub_category_index_path(category), :class => "btn btn-primary"  %>
           </p>
         </div>
       </div>
