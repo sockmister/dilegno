@@ -58,13 +58,15 @@
 			<div class="dilegno_footer_center">
 				<!-- nav stuff -->
 				<% @categories.each do |cat| %>
-					<h6> <%= cat.name %> </h6>
+					<h6> <%= link_to cat.name, category_path(cat.id) %> </h6>
+
 					<% unless cat.sub_categories.empty? %>
 						<% sub_cats = cat.sub_categories %>
 						<% sub_cats.each do |sub_cat| %>
-							<p> <%= sub_cat.name %> </p>
+							<p> <%= link_to sub_cat.name, sub_category_path(sub_cat.id) %> </p>
 						<% end %>
 					<% end %>
+
 					<br>
 				<% end %>
 			</div>
