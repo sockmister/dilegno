@@ -28,7 +28,7 @@ tinymce.init({
 						<li class="nav-header">Content Management</li>
 						<li class="<%= controller.class == Admin::FeaturedImageController ? 'active' : '' %>">
 							<%= link_to "Featured Images", :controller => "featured_image", :action => "index" %></li>
-							<li class="<%= controller.class == Admin::CategoryController ? 'active' : '' %>">
+							<li class="<%= controller.class == Admin::CategoryController || controller.class == Admin::SubCategoryController ? 'active' : '' %>">
 	          	<%= link_to "Category", :controller => "category", :action => "index" %></li>
 	          <li class="<%= controller.class == Admin::ProductController ? 'active' : '' %>">	
 	          	<%= link_to "Product", :controller => "product", :action => "index" %></li>
