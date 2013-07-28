@@ -15,3 +15,4 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require jasny-bootstrap
+//= require bootstrap-colorpicker

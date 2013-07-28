@@ -30,3 +30,62 @@ body {
     width: 1100px;
     max-width: 1100px;
 }
+
+.dilegno_footer {
+	width: 1200px;
+	background: #151515;
+	color: #FFFFFF;
+	float: left;
+	padding: 0px 0px 30px 0px;
+	font-size: 12px;
+	line-height: 15px;
+
+	margin-bottom: 0px;
+	-moz-box-shadow: 0px 0px 20px #999;
+	-webkit-box-shadow: 0px 0px 20px #999;
+	box-shadow: 0 0 20px #999;
+}
+
+.dilegno_footer_container {
+	width: 960px;
+	float: left;
+	padding: 0px 120px 0px 120px;
+}
+
+.dilegno_footer_left {
+	width:320px;
+	float: left;	
+
+}
+
+.dilegno_footer_center {
+	width:320px;
+	float: left;
+
+}
+
+.dilegno_footer_right {
+	width:320px;
+	float: left;
+}
+
+.dilegno_footer_copyright {
+	padding: 10px 0px 0px 0px;
+	width: 960px;
+	float:left;
+}
+
+.dilegno_footer_white {
+	width: 1200px;
+	background: #ffffff;
+	color: #000000;
+	float: left;
+	padding: 0px 0px 30px 0px;
+	font-size: 12px;
+	line-height: 15px;
+
+	margin-bottom: 0px;
+	-moz-box-shadow: 0px 0px 20px #999;
+	-webkit-box-shadow: 0px 0px 20px #999;
+	box-shadow: 0 0 20px #999;
+}

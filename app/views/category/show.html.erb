@@ -1,3 +1,4 @@
+<!-- sub-categories header -->
 <% content_for :secondary_header do %>
 	<div class="header_sec_div">
 		<div class="header_sec_content">
@@ -5,18 +6,47 @@
 			<div class="header_sec_logo_div">
 				<%= @category %>
 			</div>
-
+<!-- 
 			<div class="header_sec_nav_div">
-				<% @sub_category.each do |cat| %>
+				<% @sub_category.reverse.each do |cat| %>
 		  		<div class="header_sec_nav_item">
 		  			<%= link_to cat.name, sub_category_path(cat.id) %>
 		  		</div>	  		
 		  	<% end %>
 	  	</div>
+	  	 -->
 		</div>
 	</div>	
 <% end %>
 
+<!-- sub-categories grid view -->
+<div class ="product_content">
+	<div class = "product_container">
+		<% @sub_category.each do |cat| %>
+			<div class="product_div">
+
+				<!-- sub_category thumbnail -->
+				<div class="product_img">
+					<!-- sub_category link -->
+					<a href = <%= sub_category_path(cat.id) %>>
+						<img src="<%= cat.dilegno_image.image.url%>" >
+					</a>
+				</div>
+				
+
+				<!-- sub_category excerpt -->
+				<div class ="product_text">
+					<a href = <%= sub_category_path(cat.id) %>>
+					<h4> <%= cat.name %> </h4> </a>
+					<p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<% if false %>
+<!-- products for that category -->
 <div class="product_content">
 	<div class="product_container">
 	<% @products.each do |product| %>
@@ -37,3 +67,5 @@
 	<% end %>
 	</div>
 </div>
+
+<% end %>

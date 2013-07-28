@@ -18,6 +18,9 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  # Color picker for products
+  gem 'bootstrap-colorpicker-rails'
 end
 
 
@@ -54,3 +57,8 @@ gem 'thin'
 
 # Maintenance mode
 gem 'turnout'
+
+# For password encryption
+gem "bcrypt-ruby", :require => "bcrypt"
+
+

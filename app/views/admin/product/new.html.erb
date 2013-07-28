@@ -4,25 +4,82 @@
 
 <!-- create a form for categories-->
 <div>
-	<legend> Add a new featured image </legend> 
+	<legend> Add a new product </legend> 
 <%= form_for @product, :url => { :action => "create" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
 
-	<div class="fileupload fileupload-new" data-provides="fileupload">
-  	<div class="fileupload-preview thumbnail" style="width: 860px; height: 460px;"></div>
-  	<div>
-    	<span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" id="featured_image_image" name="featured_image[image]" /></span>
-    	<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-    </div>
-	</div>
-</br>
+  <%= f.label :product_name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :item_code %>
+  <%= f.text_field :item_code %>
+
+  <%= f.label :length %>
+  <%= f.text_field :length %>
+
+  <%= f.label :width %>
+  <%= f.text_field :width %>
+
+  <%= f.label :height %>
+  <%= f.text_field :height %>
+
+  <%= f.label :product_name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :made_of %>
+  <%= f.text_field :made_of %>
+
+  <br>
+  <%= f.label :color %>
+  <div class="input-append color" data-color="rgb(255, 146, 180)" data-color-format="rgb" id="cp3">
+    <input class="span3" value="" readonly="" type="text" name="product[color]">
+    <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
+  </div>
+
+  <%= f.label :category %>
+  <%= collection_select(:product, :category_id, Category.all, :name, :name, prompt: true) %>
+
+  <% @category.each do |cat| %>
+    <%= f.label :sub_category, "#{cat.name} sub category", {:class => "my_hidden #{cat.name}" }%>
+    <%= collection_select(:product, :sub_category_id, cat.sub_categories, :id, :name, {:prompt => true}, {:class=> "my_hidden #{cat.name}"})%>
+  <% end %>
 
   <%= f.label :description %>
   <%= f.text_area :description, :class=>"field span9", :rows=>5 %>
 
+  <div> <!-- div for the entire uploader -->
+    <div class="fileupload fileupload-new" data-provides="fileupload">
+      <div class="fileupload-preview thumbnail" style="width: 200px; height: 200px;"></div>
+      <div>
+        <span class="btn btn-file">
+          <span class="fileupload-new">Select image</span>
+          <span class="fileupload-exists">Change</span>
+          <input type="file" id="featured_image_image" name="featured_image[image]" />
+        </span>
+        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+      </div>
+    </div>
+  </div>
 </br>
-  <%= f.submit "Add image", :class => "btn btn-primary"%>
+
+<!-- testing uploader -->
+<input type="file" id="my_fileupload" name="featured_image[image]">
+</br>
+
+  <%= f.submit "Add product", :class => "btn btn-primary"%>
   <%= link_to "Cancel", {:controller => "featured_image", :action => "index"}, :class => "btn btn-primary"  %>
 <% end %>
 
-
 </div>
+
+<script>
+$('#product_category_id').change(function() {
+  $('.my_hidden').hide();
+  var selected = $(this).find(':selected');
+  // alert('Category Id = ' + selected.val() + ' selected.');
+  $('.'+selected.val()).show();
+});
+
+$('#cp3').colorpicker({
+  format: 'rgb'
+});
+</script>

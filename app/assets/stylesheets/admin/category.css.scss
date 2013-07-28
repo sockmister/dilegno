@@ -10,6 +10,7 @@
 .thumbnail {
   text-align:center;
   height: 260px;
+  position:relative;
 }
 
 .thumbnail > li {
@@ -24,13 +25,27 @@
 }
 
 .the_content {
+	float:left;
 	height:200px;
+	width:260px;
+	margin-left: auto;
+  margin-right:auto; 
+  display:block;
+}
+
+.the_content > img {
+	height:180px;
 }
 
 .the_content > h3 {
-	line-height:150px;
+	line-height:40px;
 }
 
 .the_actions{
-	height:60px;	
+	float:left;
+	margin-top: 0px;
+	width:260px;
+	height:35px;	
+	position:absolute;                  /* added */
+  bottom:5px;                           /* added */
 }

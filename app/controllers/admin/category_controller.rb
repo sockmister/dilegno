@@ -18,7 +18,8 @@ class Admin::CategoryController < AdminController
 
 	# show a specific category
 	def show
-		@sub_category = Category.find(params[:id])
+		@category = Category.find(params[:id])
+		@sub_categories = @category.sub_categories
 	end
 
 	# return a form for updating a category

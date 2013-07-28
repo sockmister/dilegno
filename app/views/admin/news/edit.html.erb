@@ -1,0 +1,22 @@
+<div class="heading">
+  <h1>Your News</h1>
+</div>
+
+<!-- create a form for categories-->
+<div>
+	<legend> Edit </legend> 
+<%= form_for [:admin, @news] do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, :class=>"field span9", :rows=>5 %>
+
+</br>
+  <%= f.submit "Update news item", :class => "btn btn-primary"%>
+  <%= link_to "Cancel", {:controller => "news", :action => "index"}, :class => "btn btn-primary"  %>
+<% end %>
+
+
+</div>

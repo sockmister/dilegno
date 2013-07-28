@@ -3,27 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .product_content{
-	background: #fff;
+	/*background: #fff;*/
 	width: 1200px;
 	height: auto;
 	padding-top: 20px;
 }
 
 .product_container {
-	background: #fff;
+	/*background: #fff;*/
 	margin-left: auto ;
   margin-right: auto ;
-  width: 1100px;
+  /*width: 1100px;*/
   height: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-bottom: 20px;
 
 }
 
 .product_div {
 	height: auto;
-	width: 330px;
+	width: 347px;
 	margin:10px;
 	background: #fff;
 	padding: 5px;
@@ -34,13 +34,32 @@
 	display: inline-block;
 }
 
-#content #product_img {
-	display:inline-block;
-	padding:2px;
+.product_img {
+	display:block;
+	padding:4px;
+	margin-left: auto;
+  margin-right: auto;
+  height:320px;
 	-moz-box-shadow: 0 0 0px #999;
 	-webkit-box-shadow: 0 0 0px #999;
 	box-shadow: 0 0 0px #999;
 	border: 0px solid;
+	position:relative;
+}
+
+.product_img img {
+	height:auto; 
+	max-height:320px; 
+	width:auto;
+	max-width:320px;  
+
+	display:block; 
+	position:absolute; 
+	top:0; 
+	bottom:0; 
+	left:0; 
+	right:0; 
+	margin:auto;
 }
 
 .product_cat {

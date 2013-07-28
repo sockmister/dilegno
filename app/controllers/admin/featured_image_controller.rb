@@ -8,8 +8,9 @@ class Admin::FeaturedImageController < AdminController
 	end
 
 	def create
-		@featured = FeaturedImage.new(params[:featured_image])
-		@featured.save
+		featured = FeaturedImage.new(params[:featured_image])
+		featured.build_dilegno_image(params[:dilegno_image])
+		featured.save
 		redirect_to :action => "index"
 	end
 
@@ -18,6 +19,7 @@ class Admin::FeaturedImageController < AdminController
 
 	def edit
 		@featured = FeaturedImage.find(params[:id])
+		@featured_image = @featured.dilegno_image
 	end
 
 	def update

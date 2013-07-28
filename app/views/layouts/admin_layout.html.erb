@@ -6,6 +6,14 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
+  <!-- Place inside the <head> of your HTML -->
+<!-- <script type="text/javascript" src="tinymce/tinymce.min.js"></script> -->
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea"
+ });
+</script>
+
 </head>
 <body>
 	<div class="container">
@@ -24,11 +32,19 @@
 	          	<%= link_to "Category", :controller => "category", :action => "index" %></li>
 	          <li class="<%= controller.class == Admin::ProductController ? 'active' : '' %>">	
 	          	<%= link_to "Product", :controller => "product", :action => "index" %></li>
+	          <li class="<%= controller.class == Admin::NewsController ? 'active' : '' %>">	
+	          	<%= link_to "News", :controller => "news", :action => "index" %></li>
 	          <li><a href="#"></a></li>
 
 	          <li class="nav-header">Miscellaneous</li>
 	          <li class="<%= controller.class == Admin::CategoryController ? 'actives' : '' %>">
 	          	<%= link_to "Dilengo's Information", :controller => "category", :action => "index" %></li>
+
+	          <li class="nav-header">Account</li>
+	          <li >
+	          	<%= link_to "Logout", 'logout' %></li>
+	          	
+
 	        </ul>
 	      </div><!--/.well -->
 	    </div><!--/span3-->

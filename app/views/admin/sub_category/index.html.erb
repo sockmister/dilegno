@@ -23,13 +23,13 @@
       <img data-src="" alt="">
       <div class="the_content">
         <img src="<%= category.dilegno_image.image.url %>">
-        <h3><%= category.name %></h3>
+        <h5><%= category.name %></h5>
       </div>
       <div class="the_actions">
-        <p>
+        
           <%= link_to (raw("<i class=\"icon-edit\"></i>")), edit_admin_category_sub_category_path(@category, category), :class => "btn btn-primary"  %>
           <%= link_to (raw("<i class=\"icon-remove\"></i>")), admin_category_sub_category_path(@category, category), :method => :delete, :confirm => "Hey, you are deleting a sub category. \nYou probably already know, but this means products associated with this category have to be re-assgined.\nProceed?", :class => "btn btn-primary"%> 
-        </p>
+        
       </div>
     </div>
   </li>

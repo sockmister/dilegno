@@ -1,0 +1,21 @@
+<!-- sub-categories header -->
+<% content_for :secondary_header do %>
+	<div class="header_sec_div">
+		<div class="header_sec_content">
+
+			<div class="header_sec_logo_div">
+				News
+			</div>
+		</div>
+	</div>	
+<% end %>
+
+<div class="news_item">
+	<% @news.each do |news_item| %>
+		<h2> <%= news_item.title %> </h2>
+		<p> <%= news_item.content.html_safe %> </p>
+		<div class="news_footer">
+			<p> <em> Posted on: <%= news_item.created_at.strftime("%m/%d/%Y %I:%M %p") %> </em><p>
+		</div>
+	<% end %>
+</div>

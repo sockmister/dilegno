@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711222359) do
+ActiveRecord::Schema.define(:version => 20130726124448) do
+
+  create_table "admin_users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -41,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20130711222359) do
     t.datetime "image_updated_at"
   end
 
+  create_table "news", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "title"
+    t.text     "content"
+  end
+
   create_table "product_images", :force => true do |t|
     t.integer  "product_id"
     t.datetime "created_at",         :null => false
@@ -62,6 +77,11 @@ ActiveRecord::Schema.define(:version => 20130711222359) do
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
     t.decimal  "price",           :precision => 8, :scale => 2
+    t.decimal  "length",          :precision => 8, :scale => 2
+    t.decimal  "width",           :precision => 8, :scale => 2
+    t.decimal  "height",          :precision => 8, :scale => 2
+    t.string   "item_code"
+    t.string   "made_of"
   end
 
   create_table "sub_categories", :force => true do |t|

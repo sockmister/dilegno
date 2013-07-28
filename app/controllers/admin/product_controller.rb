@@ -5,6 +5,7 @@ class Admin::ProductController < AdminController
 
 	def new
 		@product = Product.new
+		@category = Category.all
 	end
 
 	def create
