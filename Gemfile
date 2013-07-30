@@ -21,6 +21,15 @@ group :assets do
 
   # Color picker for products
   gem 'bootstrap-colorpicker-rails'
+
+  # twitter bootstrap + dependencies
+	gem 'jquery-rails'
+	gem 'therubyracer'
+	gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+	gem 'twitter-bootstrap-rails'
+
+	# jasny bootstrap
+	gem 'jasny_bootstrap_extension_rails'
 end
 
 
@@ -42,15 +51,6 @@ end
 # Other gem
 # Image uploading
 gem 'paperclip'
-
-# twitter bootstrap + dependencies
-gem 'jquery-rails'
-gem 'therubyracer'
-gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem 'twitter-bootstrap-rails'
-
-# jasny bootstrap
-gem 'jasny_bootstrap_extension_rails'
 
 # Application server
 gem 'thin'
