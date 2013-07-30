@@ -1,0 +1,68 @@
+<!-- sub-categories header -->
+<% content_for :secondary_header do %>
+	<div class="header_sec_div">
+		<div class="header_sec_content">
+
+			<div class="header_sec_logo_div">
+				<%= "#{@category.name} - #{@sub_category.name}"  %>
+			</div>
+
+		</div>
+	</div>	
+<% end %>
+
+<!-- sub-categories grid view -->
+<div class ="product_content">
+	<div class = "product_container">
+
+		
+		<% @products.each do |product| %>
+			<div class="product_div">
+
+				<!-- sub_category thumbnail -->
+				<div class="product_img">
+					<!-- sub_category link -->
+					<a href = <%= product_path(product.id) %>>
+						<% if product.dilegno_images.count > 0 %>
+							<img src="<%= product.dilegno_images[0].image.url%>" >
+						<% end %>
+					</a>
+				</div>
+				
+
+				<!-- sub_category excerpt -->
+				<div class ="product_text">
+					<a href = <%= product_path(product.id) %>>
+					<h4> <%= product.name %> </h4> </a>
+					<!-- <p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p> -->
+				</div>
+			</div>
+		<% end %>
+
+	</div>
+</div>
+
+<% if false %>
+<!-- products for that category -->
+<div class="product_content">
+	<div class="product_container">
+	<% @products.each do |product| %>
+		<div class="product_div">
+			<!-- product thumbnail -->
+			<div class="product_img">
+				<!-- link -->
+				<a href = <%= product_path(product.id) %>>
+					<%= image_tag product.product_images[0].image.url %>
+				</a>
+			</div>
+
+			<!-- product excerpt --> 
+			<div class="product_text">
+				<p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p>
+			</div>
+		</div>
+	<% end %>
+	</div>
+</div>
+
+<% end %>
