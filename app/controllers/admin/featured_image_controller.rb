@@ -23,6 +23,11 @@ class Admin::FeaturedImageController < AdminController
 	end
 
 	def update
+		featured = FeaturedImage.find(params[:id])
+		featured.update_attributes(params[:featured_image])
+		featured.dilegno_image.update_attributes(params[:dilegno_image])
+		featured.save
+		redirect_to :action => "index"
 	end
 
 	def destroy
