@@ -1,10 +1,9 @@
 <% content_for :secondary_header do %>
 	<div class="header_sec_div">
 		<div class="header_sec_content">
-
 			<div class="header_sec_logo_div" style="width: 1200px; float: left; text-align: left; padding-left: 50px">
 				<%= link_to @category.name, category_path(@category.id) %>
-				- Product Name
+				- <%= @product.name %>
 			</div>
 
 			<!-- <div class="header_sec_nav_div">
@@ -19,10 +18,12 @@
 <% end %>
 
 <div class="product_content">
-	<div id="galleria">
-		<% @product_images.each do |image| %>
-			<%= image_tag(image.image.url, :class => "product_galleria") %>
-		<% end %>
+	<div class="product_image">
+		<div id="galleria">
+			<% @product_images.each do |image| %>
+				<%= image_tag(image.image.url, :class => "product_galleria") %>
+			<% end %>
+		</div>
 	</div>
 
 	<div class="product_info">
@@ -31,16 +32,25 @@
 				<strong>Description</strong>
 			</div>
 			<div class="product_info_section_content">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mattis tristique nulla, sed lacinia massa consectetur blandit. Nunc pharetra consectetur quam non sollicitudin. Nulla tristique, ligula quis blandit lobortis, augue tellus faucibus odio, in aliquam nunc lacus ultrices sapien. Etiam et lobortis leo, ut fringilla dolor. Nam tristique odio quis lacus malesuada, sit amet ultrices orci tempus. In sed ligula dapibus dui volutpat pulvinar. Nam dolor est, dignissim nec facilisis sed, suscipit eu nisi. Curabitur eu sagittis lectus, non sodales tortor. Vivamus dignissim faucibus odio, non gravida sapien auctor a.
+				<%= @product.description.html_safe %>
 			</div>
 		</div>
 
 		<div class="product_info_section">
 			<div class="product_info_section_header">
-				<strong>Dimensions</strong>
+				<strong>Dimensions (L x W x H)</strong>
 			</div>
 			<div class="product_info_section_content">
-				850 x 804 x 630
+				<%= "#{@product.length} x #{@product.width} x #{@product.height}" %>
+			</div>
+		</div>
+
+		<div class="product_info_section">
+			<div class="product_info_section_header">
+				<strong>Made of</strong>
+			</div>
+			<div class="product_info_section_content">
+				<%= @product.made_of %>
 			</div>
 		</div>
 
@@ -50,16 +60,11 @@
 			</div>
 			<div class="product_info_section_content">
 				<div class="product_info_color_palette">
-					<div class="product_info_color" style="background: #E01B5D">
-					</div>
-					<div class="product_info_color" style="background: #1930E0">
-					</div>
-					<div class="product_info_color" style="background: #694000">
+					<div class="product_info_color" style="background: <%= @product.color %>">
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 
