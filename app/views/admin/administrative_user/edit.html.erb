@@ -1,0 +1,24 @@
+<h2>Change password</h2>
+<br>
+		<% flash.each do |name, msg| %>
+			<% if msg == "Password succesfully changed." %>
+				<div class="alert alert-success"><%= content_tag :div, msg, :id => "flash_#{name}" %></div>
+			<% else %>
+				<div class="alert alert-danger"><%= content_tag :div, msg, :id => "flash_#{name}" %></div>
+			<% end %>
+		<% end %>
+<br>
+<div>
+	<%= form_tag( {:controller => :administrative_user, :action => :update, :id => session[:user_id]}, {:method => :put} ) do %>
+		<%= label :password, "Current password" %>
+	  <%= password_field_tag :curr_password %>
+	  <%= label :new_password, "New password" %>
+	  <%= password_field_tag :new_password %>
+	  <%= label :confirm_password, "Confirm password" %>
+	  <%= password_field_tag :confirm_password %>
+	  <br>
+	  
+		<br>
+		<p><%= submit_tag "Change password", :class=>"btn"%></p>
+	<% end %>
+</div>

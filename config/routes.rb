@@ -14,13 +14,14 @@ Dilegno::Application.routes.draw do
   	resources :sub_category
   	resources :product
     resources :news
+    resources :administrative_user
 
     resources :category do
       resources :sub_category
     end
     
-    resources :product do
-      resources :product_image
+    resources :products do
+      resources :dilegno_images
     end
 	end
 
