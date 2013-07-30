@@ -26,7 +26,8 @@ class Admin::SubCategoryController < AdminController
 
 	def update
 		sub_category = SubCategory.find(params[:id])
-		sub_category.name = params[:sub_category][:name]
+		sub_category.update_attributes(params[:sub_category])
+		sub_category.dilegno_image.update_attributes(params[:dilegno_image])
 		sub_category.save
 		redirect_to admin_category_sub_category_index_path(params[:category_id])
 	end

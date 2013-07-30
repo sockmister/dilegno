@@ -6,7 +6,7 @@
 <div>
 	<legend> Edit sub category </legend> 
 
-<%= form_for @sub_category, :url => { :action => "create" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
+<%= form_for @sub_category, :url => { :action => "update" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
 
 	<%= f.label :sub_category_name %>
   <%= f.text_field :name %>
