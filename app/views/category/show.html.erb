@@ -4,7 +4,7 @@
 		<div class="header_sec_content">
 
 			<div class="header_sec_logo_div">
-				<%= @category %>
+				<%= @category  %>
 			</div>
 <!-- 
 			<div class="header_sec_nav_div">
@@ -22,26 +22,53 @@
 <!-- sub-categories grid view -->
 <div class ="product_content">
 	<div class = "product_container">
-		<% @sub_category.each do |cat| %>
-			<div class="product_div">
 
-				<!-- sub_category thumbnail -->
-				<div class="product_img">
-					<!-- sub_category link -->
-					<a href = <%= sub_category_path(cat.id) %>>
-						<img src="<%= cat.dilegno_image.image.url%>" >
-					</a>
-				</div>
-				
+		<% if @sub_category.count > 0 %>
+			<% @sub_category.each do |cat| %>
+				<div class="product_div">
 
-				<!-- sub_category excerpt -->
-				<div class ="product_text">
-					<a href = <%= sub_category_path(cat.id) %>>
-					<h4> <%= cat.name %> </h4> </a>
-					<p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p>
+					<!-- sub_category thumbnail -->
+					<div class="product_img">
+						<!-- sub_category link -->
+						<a href = <%= sub_category_path(cat.id) %>>
+							<img src="<%= cat.dilegno_image.image.url%>" >
+						</a>
+					</div>
+					
+
+					<!-- sub_category excerpt -->
+					<div class ="product_text">
+						<a href = <%= sub_category_path(cat.id) %>>
+						<h4> <%= cat.name %> </h4> </a>
+						<!-- <p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p> -->
+					</div>
 				</div>
-			</div>
+			<% end %>
+		<% else %>
+			<% @products.each do |product| %>
+				<div class="product_div">
+
+					<!-- sub_category thumbnail -->
+					<div class="product_img">
+						<!-- sub_category link -->
+						<a href = <%= product_path(product.id) %>>
+							<% if product.dilegno_images.count > 0 %>
+								<img src="<%= product.dilegno_images[0].image.url%>" >
+							<% end %>
+						</a>
+					</div>
+					
+
+					<!-- sub_category excerpt -->
+					<div class ="product_text">
+						<a href = <%= product_path(product.id) %>>
+						<h4> <%= product.name %> </h4> </a>
+						<!-- <p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p> -->
+					</div>
+				</div>
+			<% end %>
 		<% end %>
+
 	</div>
 </div>
 
