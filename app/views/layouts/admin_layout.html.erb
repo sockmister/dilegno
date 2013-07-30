@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 
   <!-- Place inside the <head> of your HTML -->
-<!-- <script type="text/javascript" src="tinymce/tinymce.min.js"></script> -->
+<script type="text/javascript" src="tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
 tinymce.init({
     selector: "textarea"
@@ -37,10 +37,12 @@ tinymce.init({
 	          <li><a href="#"></a></li>
 
 	          <li class="nav-header">Miscellaneous</li>
-	          <li class="<%= controller.class == Admin::CategoryController ? 'actives' : '' %>">
-	          	<%= link_to "Dilengo's Information", :controller => "category", :action => "index" %></li>
+	          <!-- <li class="<%= controller.class == Admin::CategoryController ? 'actives' : '' %>">
+	          	<%= link_to "Dilengo's Information", :controller => "category", :action => "index" %></li> -->
 
 	          <li class="nav-header">Account</li>
+	          <li >
+	          	<%= link_to "Change password", edit_admin_administrative_user_path(session[:user_id]) %></li>
 	          <li >
 	          	<%= link_to "Logout", 'logout' %></li>
 	          	
@@ -53,7 +55,5 @@ tinymce.init({
     	</div><!--/span9-->
 		</div><!--/row-fluid-->
 	</div>
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
