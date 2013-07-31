@@ -19,17 +19,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-  # Color picker for products
-  gem 'bootstrap-colorpicker-rails'
-
-  # twitter bootstrap + dependencies
-	gem 'jquery-rails'
-	gem 'therubyracer'
-	gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-	gem 'twitter-bootstrap-rails'
-
-	# jasny bootstrap
-	gem 'jasny_bootstrap_extension_rails'
 end
 
 
@@ -61,4 +50,14 @@ gem 'turnout'
 # For password encryption
 gem "bcrypt-ruby", :require => "bcrypt"
 
+# Color picker for products
+  gem 'bootstrap-colorpicker-rails'
 
+  # twitter bootstrap + dependencies
+  gem 'jquery-rails'
+  gem 'therubyracer'
+  gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem 'twitter-bootstrap-rails'
+
+  # jasny bootstrap
+  gem 'jasny_bootstrap_extension_rails'
