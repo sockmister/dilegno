@@ -1,4 +1,4 @@
-class SessionsController < AdminController
+class Admin::SessionsController < AdminController
 	skip_before_filter :require_login, :only => [:new, :create]
 
 	# login

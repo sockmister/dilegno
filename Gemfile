@@ -53,7 +53,7 @@ end
 gem 'paperclip'
 
 # Application server
-gem 'thin'
+gem 'puma'
 
 # Maintenance mode
 gem 'turnout'
