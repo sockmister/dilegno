@@ -122,6 +122,8 @@ GEM
       ref
     thor (0.18.1)
     tilt (1.4.1)
+    tinymce-rails (4.0.2)
+      railties (>= 3.1.1)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
@@ -154,6 +156,7 @@ DEPENDENCIES
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   therubyracer
+  tinymce-rails
   turnout
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

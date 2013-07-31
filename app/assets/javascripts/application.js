@@ -16,3 +16,4 @@
 //= require_tree .
 //= require jasny-bootstrap
 //= require bootstrap-colorpicker
+//= require tinymce

@@ -61,3 +61,6 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
   # jasny bootstrap
   gem 'jasny_bootstrap_extension_rails'
+
+  # tinymce
+  gem 'tinymce-rails'
