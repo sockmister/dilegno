@@ -33,13 +33,13 @@
   </div>
 
   <%= f.label :category %>
-  <%= collection_select(:product, :category_id, Category.all, :name, :name, {:selected => "#{@curr_category.name}"}) %>
+  <%= collection_select(:product, :category_id, Category.all, :name, :name, {:selected => "#{@curr_category}"}) %>
 
   <% @category.each do |cat| %>
     <% unless cat.sub_categories.empty? %>
       <% if cat.id == @product.category_id %>
         <%= f.label :sub_category, "#{cat.name} sub category", {:class => "my_hidden #{cat.name}", :style => "display:block" }%>
-        <%= collection_select(:product, :sub_category_id, cat.sub_categories, :id, :name, {:selected => "#{@curr_sub_cat.name}"}, {:class=> "my_hidden #{cat.name}", :id => "#{cat.name}", :style => "display:block"})%>
+        <%= collection_select(:product, :sub_category_id, cat.sub_categories, :id, :name, {:selected => "#{@curr_sub_cat}"}, {:class=> "my_hidden #{cat.name}", :id => "#{cat.name}", :style => "display:block"})%>
       <% else %>
         <%= f.label :sub_category, "#{cat.name} sub category", {:class => "my_hidden #{cat.name}" }%>
         <%= collection_select(:product, :sub_category_id, cat.sub_categories, :id, :name, {:prompt => true}, {:class=> "my_hidden #{cat.name}", :id => "#{cat.name}"})%>

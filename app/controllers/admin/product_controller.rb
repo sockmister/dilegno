@@ -31,10 +31,14 @@ class Admin::ProductController < AdminController
 	def edit
 		@product = Product.find(params[:id])
 		if @product.category_id
-			@curr_category = Category.find(@product.category_id)
+			@curr_category = Category.find(@product.category_id).name
+		else
+			@curr_category = ""
 		end
 		if @product.sub_category_id
-			@curr_sub_cat = SubCategory.find(@product.sub_category_id)
+			@curr_sub_cat = SubCategory.find(@product.sub_category_id).anme
+		else
+			@curr_sub_cat = ""
 		end
 		@category = Category.all
 	end
