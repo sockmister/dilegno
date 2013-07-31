@@ -30,7 +30,9 @@ class Admin::ProductController < AdminController
 
 	def edit
 		@product = Product.find(params[:id])
-		@curr_category = Category.find(@product.category_id)
+		if @product.category_id
+			@curr_category = Category.find(@product.category_id)
+		end
 		if @product.sub_category_id
 			@curr_sub_cat = SubCategory.find(@product.sub_category_id)
 		end
