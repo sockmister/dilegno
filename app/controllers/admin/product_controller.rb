@@ -15,6 +15,9 @@ class Admin::ProductController < AdminController
 			@product.category_id = cat.id
 		end
 		# sub_cat = SubCategory.where(:name => params[:product][:sub_categroy_id])
+		if params[:product][:category_id] != 0
+			@product.sub_category_id = params[:product][:category_id]
+		end
 
 		if params[:dilegno_image]
 			params[:dilegno_image].each_value { |img| 
@@ -35,8 +38,8 @@ class Admin::ProductController < AdminController
 		else
 			@curr_category = ""
 		end
-		if @product.sub_category_id
-			@curr_sub_cat = SubCategory.find(@product.sub_category_id).anme
+		if @product.sub_category_id && @product.sub_category_id != 0
+			@curr_sub_cat = SubCategory.find(@product.sub_category_id)
 		else
 			@curr_sub_cat = ""
 		end
