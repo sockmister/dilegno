@@ -39,7 +39,7 @@ class Admin::ProductController < AdminController
 			@curr_category = ""
 		end
 		if @product.sub_category_id && @product.sub_category_id != 0
-			@curr_sub_cat = SubCategory.find(@product.sub_category_id)
+			@curr_sub_cat = SubCategory.find(@product.sub_category_id).id
 		else
 			@curr_sub_cat = ""
 		end
