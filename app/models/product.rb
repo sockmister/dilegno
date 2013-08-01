@@ -9,4 +9,16 @@ class Product < ActiveRecord::Base
 
   has_many :dilegno_images, as: :imageable
   has_one :category
+
+  def sub_category_value
+  	if sub_category_id == nil
+  		if category_id != nil
+  			Category.find(category_id).name
+  		else
+  			""
+  		end
+  	else
+  		SubCategory.find(sub_category_id).name
+  	end
+  end
 end

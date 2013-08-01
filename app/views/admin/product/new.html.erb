@@ -33,14 +33,7 @@
   </div>
 
   <%= f.label :category %>
-  <%= collection_select(:product, :category_id, Category.all, :name, :name, prompt: true) %>
-
-  <% @category.each do |cat| %>
-    <% unless cat.sub_categories.empty? %>
-      <%= f.label :sub_category, "#{cat.name} sub category", {:class => "my_hidden #{cat.name}" }%>
-      <%= collection_select(:product, :sub_category_id, cat.sub_categories, :id, :name, {:prompt => true}, {:class=> "my_hidden #{cat.name}", :id => "#{cat.name}"})%>
-    <% end %>
-  <% end %>
+  <%= grouped_collection_select(:product, :sub_category_id, @category, :sub_categories_with_default, :name, :name, :name) %>
 
   <%= f.label :image, "Product Images" %>
   <div class="image_manage span9">

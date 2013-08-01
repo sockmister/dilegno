@@ -4,7 +4,7 @@
 
 <!-- create a form for categories-->
 <div>
-	<legend> Add a new product </legend> 
+	<legend> Edit your current product </legend> 
 <%= form_for @product, :url => { :action => "update" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
 
   <%= f.label :product_name %>
@@ -33,18 +33,11 @@
   </div>
 
   <%= f.label :category %>
-  <%= collection_select(:product, :category_id, Category.all, :name, :name, {:selected => "#{@curr_category}"}) %>
-
-  <% @category.each do |cat| %>
-    <% unless cat.sub_categories.empty? %>
-      <% if cat.id == @product.category_id %>
-        <%= f.label :sub_category, "#{cat.name} sub category", {:class => "my_hidden #{cat.name}", :style => "display:block" }%>
-        <%= collection_select(:product, :sub_category_id, cat.sub_categories, :id, :name, {:selected => "#{@curr_sub_cat}"}, {:class=> "my_hidden #{cat.name}", :id => "#{cat.name}", :style => "display:block"})%>
-      <% else %>
-        <%= f.label :sub_category, "#{cat.name} sub category", {:class => "my_hidden #{cat.name}" }%>
-        <%= collection_select(:product, :sub_category_id, cat.sub_categories, :id, :name, {:prompt => true}, {:class=> "my_hidden #{cat.name}", :id => "#{cat.name}"})%>
-      <% end %>
-    <% end %>
+  <% if @product.sub_category_id == nil %>
+    <p> <%= @curr_category %>
+    <%= grouped_collection_select(:product, :sub_category_value, @category, :sub_categories_with_default, :name, :name, :name) %>
+  <% else %>
+    <%= grouped_collection_select(:product, :sub_category_value, @category, :sub_categories_with_default, :name, :name, :name) %>
   <% end %>
 
   <%= f.label :existing_image, "Your Existing Images" %>
@@ -85,6 +78,10 @@ $('#product_category_id').change(function() {
   var selected = $(this).find(':selected');
   // alert('Category Id = ' + selected.val() + ' selected.');
   $('.'+selected.val()).show();
+
+  //remove name from old input
+  //add name to new input
+  $('input:select[name=""]').attr('name', 'product[sub_category_id]');
 });
 
 $('#cp3').colorpicker({
