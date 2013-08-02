@@ -1,6 +1,6 @@
 class Admin::ProductController < AdminController
 	def index
-		@products = Product.all
+		@products = Product.order('name')
 	end
 
 	def new

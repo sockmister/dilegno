@@ -1,6 +1,5 @@
 class CategoryController < ApplicationController
 	def index
-		@category = Category.all
 	end
 
 	def new
@@ -11,8 +10,8 @@ class CategoryController < ApplicationController
 
 	def show
 		@category = Category.find(params[:id]).name
-		@sub_category = SubCategory.where(:category_id => params[:id])
-		@products = Product.where(:category_id => params[:id])
+		@sub_category = SubCategory.where(:category_id => params[:id]).order('name')
+		@products = Product.where(:category_id => params[:id]).order('name')
 	end
 
 	def edit
