@@ -9,7 +9,7 @@ class CategoryController < ApplicationController
 	end
 
 	def show
-		@category = Category.find(params[:id]).name
+		@category = Category.find(params[:id])
 		@sub_category = SubCategory.where(:category_id => params[:id]).order('name')
 		@products = Product.where(:category_id => params[:id]).order('name')
 	end

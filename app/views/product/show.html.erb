@@ -1,18 +1,10 @@
 <% content_for :secondary_header do %>
 	<div class="header_sec_div">
 		<div class="header_sec_content">
-			<div class="header_sec_logo_div" style="width: 1200px; float: left; text-align: left; padding-left: 50px">
-				<%= link_to @category.name, category_path(@category.id) %>
-				- <%= @product.name %>
+			<div class="header_sec_logo_div">
+				
+				<%= link_to(@category.name, category_path(@category)) %> -> <%= link_to(@sub_category.name, sub_category_path(@sub_category))%> -> <%= @product.name %>
 			</div>
-
-			<!-- <div class="header_sec_nav_div">
-				<% @sub_category.each do |cat| %>
-		  		<div class="header_sec_nav_item">
-		  			<%= link_to cat.name, sub_category_path(cat.id) %>
-		  		</div>	  		
-		  	<% end %>
-	  	</div> -->
 		</div>
 	</div>	
 <% end %>

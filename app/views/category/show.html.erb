@@ -4,7 +4,7 @@
 		<div class="header_sec_content">
 
 			<div class="header_sec_logo_div">
-				<%= @category  %>
+				<%= link_to @category.name , category_path(@category)  %>
 			</div>
 <!-- 
 			<div class="header_sec_nav_div">
