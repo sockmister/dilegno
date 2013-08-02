@@ -6,17 +6,12 @@
 			<div class="header_sec_logo_div">
 				<%= link_to @category.name , category_path(@category)  %>
 			</div>
-<!-- 
-			<div class="header_sec_nav_div">
-				<% @sub_category.reverse.each do |cat| %>
-		  		<div class="header_sec_nav_item">
-		  			<%= link_to cat.name, sub_category_path(cat.id) %>
-		  		</div>	  		
-		  	<% end %>
-	  	</div>
-	  	 -->
 		</div>
 	</div>	
+<% end %>
+
+<% if @category.name == "Home Accessories" %>
+	<h3> Coming Soon. </h3>
 <% end %>
 
 <!-- sub-categories grid view -->
@@ -40,7 +35,6 @@
 					<div class ="product_text">
 						<a href = <%= sub_category_path(cat.id) %>>
 						<h4> <%= cat.name %> </h4> </a>
-						<!-- <p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p> -->
 					</div>
 				</div>
 			<% end %>
@@ -62,8 +56,11 @@
 					<!-- sub_category excerpt -->
 					<div class ="product_text">
 						<a href = <%= product_path(product.id) %>>
-						<h4> <%= product.name %> </h4> </a>
-						<!-- <p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p> -->
+						<% if product.name.length >= 24 %>
+							<h4><%= product.name[0..24].gsub(/\s\w+$/, '...') %> </h4> 
+						<% else %>
+							<h4><%= product.name %> </h4> 
+						<% end %>
 					</div>
 				</div>
 			<% end %>

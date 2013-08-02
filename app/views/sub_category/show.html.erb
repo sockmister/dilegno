@@ -33,7 +33,7 @@
 				<!-- sub_category excerpt -->
 				<div class ="product_text">
 					<a href = <%= product_path(product.id) %>>
-						<% if product.name.length > 25 %>
+						<% if product.name.length >= 24 %>
 							<h4><%= product.name[0..24].gsub(/\s\w+$/, '...') %> </h4> 
 						<% else %>
 							<h4><%= product.name %> </h4> 
