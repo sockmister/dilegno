@@ -9,7 +9,8 @@
   <div class="header_div">
 	  <div class="header_logo_div">
 	  	<!-- logo img -->
-	  	<%= link_to "Di Legno", :controller => "home", :action => "index" %>
+	  	<%= link_to( image_tag("dilegno_logo_trans.png", style: "height: 76px;"), :controller => "home", :action => "index")%>
+	  	<!-- <%= link_to "Di Legno", :controller => "home", :action => "index" %> -->
 	  </div>
 
 	  <div class="header_nav_div">
@@ -26,7 +27,7 @@
 	  	</div>
 
 	  	<div class="header_nav_item">
-	  		<%= link_to "About Us", :controller => "home", :action => "index" %>
+	  		<%= link_to "About Us", :controller => "home", :action => "about" %>
 	  	</div>
 	  </div>
 
@@ -41,18 +42,22 @@
 
 <!-- footer -->
 <!-- check if home page, if yes render in white, else render in black -->
-<% if controller.class == HomeController %>
+<% if current_page?(:controller => 'home', :action => 'index') %>
 	<div class="dilegno_footer_white">
 	<% fb_logo = 'fb_logo_color.png' %>
+	<% dilegno_logo = 'dilegno_logo_brown.png' %>
 <% else %>
 	<div class="dilegno_footer">
 	<% fb_logo = 'fb_logo_white.png' %>
+	<% dilegno_logo = 'dilegno_logo_white.png' %>
 <% end %>
 
 	<div class="dilegno_footer_container">
 			<div class="dilegno_footer_left">
 				<!-- logo -->
-				<h6> logo here </h6>
+				<div class="dilegno_footer_left_img">
+				<%= image_tag(dilegno_logo,  width: "230") %>
+				</div>
 			</div>
 
 			<div class="dilegno_footer_center">

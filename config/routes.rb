@@ -32,5 +32,6 @@ Dilegno::Application.routes.draw do
 
   # get "products/categories"
   get "home/index"
+  get 'about', to: 'home#about'
   root :to => "home#index"
 end
