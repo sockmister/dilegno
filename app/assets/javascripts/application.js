@@ -10,8 +10,6 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require galleria-1.2.9.min
-//= require galleria.classic.min
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
@@ -19,3 +17,5 @@
 //= require jasny-bootstrap
 //= require bootstrap-colorpicker
 //= require tinymce
+//= require galleria-1.2.9.min
+//= require galleria.classic.min
