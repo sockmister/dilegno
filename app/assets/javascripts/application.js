@@ -17,3 +17,5 @@
 //= require jasny-bootstrap
 //= require bootstrap-colorpicker
 //= require tinymce
+//= require galleria
+//= require galleria.classic.min
