@@ -9,3 +9,14 @@
 .image_manage {
 	float:left;
 }
+
+.thumbnail>img {
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	max-height: 200px;
+	width: auto;
+	max-width: 200px;
+}
