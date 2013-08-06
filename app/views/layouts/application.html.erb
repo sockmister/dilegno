@@ -58,33 +58,21 @@
 			<div class="dilegno_footer_left">
 				<!-- logo -->
 				<div class="dilegno_footer_left_img">
-				<%= image_tag(dilegno_logo,  width: "230") %>
+				<%= image_tag(dilegno_logo,  width: "120") %>
 				</div>
 			</div>
 
 			<div class="dilegno_footer_center">
-				<!-- nav stuff -->
-				<% @categories.each do |cat| %>
-					<h6> <%= link_to cat.name, category_path(cat.id), :style => "color: #{link_color}" %> </h6>
-
-					<% unless cat.sub_categories.empty? %>
-						<% sub_cats = cat.sub_categories %>
-						<% sub_cats.each do |sub_cat| %>
-							<p> <%= link_to sub_cat.name, sub_category_path(sub_cat.id), :style => "color: #{link_color}" %> </p>
-						<% end %>
-					<% end %>
-
-					<br>
-				<% end %>
-			</div>
-
-			<div class="dilegno_footer_right">
-				<!-- contact us + connect with us -->
 				<h6> Contact Us </h6>
 					<p>188-6 Tanjong Katong Road<br>
 						Singapore 436990</p>
 					<p> +65 6346 2012 </p>
 					<p> <%= mail_to("info@dilegno.sg") %> </p>
+			</div>
+
+			<div class="dilegno_footer_right">
+				<!-- contact us + connect with us -->
+				
 				<h6> Connect With Us </h6>
 				<%= image_tag(fb_logo, height: "25", width: "25") %>
 			</div>

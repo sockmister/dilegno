@@ -27,10 +27,11 @@
 
   <br>
   <%= f.label :color %>
-  <div class="input-append color" data-color="<%= @product.color %>" data-color-format="rgb" id="cp3">
+  <%= f.text_field :color %>
+  <!-- <div class="input-append color" data-color="<%= @product.color %>" data-color-format="rgb" id="cp3">
     <input class="span3" value="<%= @product.color %>" readonly="" type="text" name="product[color]">
     <span class="add-on"><i style="background-color: <%= @product.color %>"></i></span>
-  </div>
+  </div> -->
 
   <%= f.label :category %>
   <% if @product.sub_category_id == nil %>

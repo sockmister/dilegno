@@ -33,7 +33,31 @@
 				<strong>Dimensions (L x W x H)</strong>
 			</div>
 			<div class="product_info_section_content">
-				<%= "#{@product.length} x #{@product.width} x #{@product.height}" %>
+				<% if @product.length != nil  && @product.length != "" %>
+					<%= @product.length %>
+					<% have_previous = true %>
+				<% else %>
+				 <% have_previous = false %>
+				<% end %>
+
+				<% if @product.width != nil  && @product.width != "" %>
+					<% if have_previous == true %>
+						<%= "x " %><%= @product.width %>
+					<% else %>
+						<%= @product.width %>
+					<% end %>
+					<% have_previous = true %>
+				<% else %>
+					<% have_previous = have_previous | false %>
+				<% end %>
+
+				<% if @product.height != nil  && @product.height != "" %>
+					<% if have_previous == true %>
+						<%= "x " %><%= @product.height %>
+					<% else %>
+						<%= @product.height %>
+					<% end %>
+				<% end %>
 			</div>
 		</div>
 
@@ -51,10 +75,7 @@
 				<strong>Color</strong>
 			</div>
 			<div class="product_info_section_content">
-				<div class="product_info_color_palette">
-					<div class="product_info_color" style="background: <%= @product.color %>">
-					</div>
-				</div>
+				<%= @product.color %>
 			</div>
 		</div>
 	</div>

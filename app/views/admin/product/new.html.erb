@@ -27,10 +27,11 @@
 
   <br>
   <%= f.label :color %>
-  <div class="input-append color" data-color="rgb(255, 146, 180)" data-color-format="rgb" id="cp3">
+  <%= f.text_field :color %>
+  <!-- <div class="input-append color" data-color="rgb(255, 146, 180)" data-color-format="rgb" id="cp3">
     <input class="span3" value="rgb(255, 146, 180)" readonly="" type="text" name="product[color]">
     <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
-  </div>
+  </div> -->
 
   <%= f.label :category %>
   <%= grouped_collection_select(:product, :sub_category_id, @category, :sub_categories_with_default, :name, :name, :name) %>
