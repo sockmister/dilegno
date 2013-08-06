@@ -10,14 +10,12 @@
 	</div>	
 <% end %>
 
-<% if @category.name == "Home Accessories" %>
-	<h3> Coming Soon. </h3>
-<% end %>
-
 <!-- sub-categories grid view -->
 <div class ="product_content">
 	<div class = "product_container">
-
+		<% if @category.name == "Home Accessories" %>
+			<h3> Coming Soon. </h3>
+		<% end %>
 		<% if @sub_category.count > 0 %>
 			<% @sub_category.each do |cat| %>
 				<div class="product_div">
