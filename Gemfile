@@ -63,7 +63,7 @@ gem 'twitter-bootstrap-rails'
 gem 'jasny_bootstrap_extension_rails'
 
 # tinymce
-gem 'tinymce-rails'
+# gem 'tinymce-rails'
 
 # galleria
 gem 'galleria-rails', github: 'albandiguer/galleria-rails'
