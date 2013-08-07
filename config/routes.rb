@@ -1,4 +1,6 @@
 Dilegno::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "sessions/new"
 
   get "admin_users/new"

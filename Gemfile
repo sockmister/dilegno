@@ -67,3 +67,6 @@ gem 'tinymce-rails'
 
 # galleria
 gem 'galleria-rails', github: 'albandiguer/galleria-rails'
+
+# ckeditor
+gem 'ckeditor'
