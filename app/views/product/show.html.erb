@@ -34,7 +34,7 @@
 			</div>
 			<div class="product_info_section_content">
 				<% if @product.length != nil  && @product.length != "" %>
-					<%= @product.length %>
+					<%= "#{@product.length.truncate} cm"%>
 					<% have_previous = true %>
 				<% else %>
 				 <% have_previous = false %>
@@ -42,9 +42,9 @@
 
 				<% if @product.width != nil  && @product.width != "" %>
 					<% if have_previous == true %>
-						<%= "x " %><%= @product.width %>
+						<%= "x " %><%= "#{ @product.width.truncate} cm" %>
 					<% else %>
-						<%= @product.width %>
+						<%="#{@product.width.truncate} cm"%>
 					<% end %>
 					<% have_previous = true %>
 				<% else %>
@@ -53,9 +53,9 @@
 
 				<% if @product.height != nil  && @product.height != "" %>
 					<% if have_previous == true %>
-						<%= "x " %><%= @product.height %>
+						<%= "x " %><%= "#{@product.height.truncate} cm"%>
 					<% else %>
-						<%= @product.height %>
+						<%= "#{@product.height.truncate} cm"%>
 					<% end %>
 				<% end %>
 			</div>
