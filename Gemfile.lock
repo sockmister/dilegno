@@ -79,6 +79,7 @@ GEM
     mime-types (1.23)
     mini_portile (0.5.0)
     multi_json (1.7.3)
+    newrelic_rpm (3.6.6.147)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
@@ -161,6 +162,7 @@ DEPENDENCIES
   jasny_bootstrap_extension_rails
   jquery-rails
   less-rails
+  newrelic_rpm
   paperclip
   pg
   puma

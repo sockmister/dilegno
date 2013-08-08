@@ -6,11 +6,14 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+</head>
+<body>
 
-  <div class="header_div">
+<div class="my_body">
+	<div class="header_div">
 	  <div class="header_logo_div">
 	  	<!-- logo img -->
-	  	<%= link_to( image_tag("dilegno_logo_brown.png", style: "height: 66px;"), :controller => "home", :action => "index")%>
+	  	<%= link_to( image_tag("dilegno_logo_white.png", style: "height: 55px;"), :controller => "home", :action => "index")%>
 	  	<!-- <%= link_to "Di Legno", :controller => "home", :action => "index" %> -->
 	  </div>
 
@@ -18,70 +21,36 @@
 
 	  	<% @categories.each do |cat| %>
 	  		<div class="header_nav_item">
-	  			<%= link_to cat.name, category_path(cat.id) %>
+	  			<a href="<%= category_path(cat.id)%>"><b><%= cat.name %></b></a>
 	  		</div>	  		
 	  	<% end %>
 
 	  	<!-- change to news controller -->
 	  	<div class="header_nav_item">
-	  		<%= link_to "News", :controller => "news", :action => "index" %>
+	  		<a href ="/news"><b>News</b></a>
 	  	</div>
 
 	  	<div class="header_nav_item">
-	  		<%= link_to "About", :controller => "home", :action => "about" %>
+	  		<a href="/about"><b>About</b></a>
 	  	</div>
 	  </div>
-
 	</div>
 
-	
-
-</head>
-<body>
-
-<div class="my_body">
 	<%= yield :secondary_header %>
 	<%= yield %>
-</div>
 
-<!-- footer -->
+	<!-- footer -->
 	<!-- check if home page, if yes render in white, else render in black -->
-	<% if current_page?(:controller => 'home', :action => 'index') %>
-		<div class="dilegno_footer_white">
-		<% fb_logo = 'fb_logo_color.png' %>
-		<% dilegno_logo = 'dilegno_logo_brown.png' %>
-		<% link_color = '#000' %>
-	<% else %>
-		<div class="dilegno_footer">
-		<% fb_logo = 'fb_logo_color.png' %>
-		<% dilegno_logo = 'dilegno_logo_brown.png' %>
-		<% link_color = '#fff' %>
-	<% end %>
-
+	<div class="dilegno_footer">
 		<div class="dilegno_footer_container">
-				<div class="dilegno_footer_left">
-					<h6> Contact Us </h6>
-					<p>188-6 Tanjong Katong Road<br>
-							Singapore 436990</p>
-					<p> +65 6346 2012 </p>
-					<p> <%= mail_to("info@dilegno.sg") %> </p>
-				</div>
-
-
-				<div class="dilegno_footer_right">
-					<!-- contact us + connect with us -->
-					
-					<h6> Connect With Us </h6>
-					<%= image_tag(fb_logo, height: "25", width: "25") %>
-				</div>
-
-				<!-- copyright -->
-				<div class="dilegno_footer_copyright">
-					<p><em>© Copyright 2013 Di Legno. All rights reserved.</em></p>
-				</div>
+			<div class="dilegno_footer_left">
+				<p><b>188-6 Tanjong Katong Road, Singapore 436990 | Mon-Sun 11AM-7PM | +65 6346 2012 | <%= mail_to("info@dilegno.sg", nil, :style => "color:white") %></b><br>
+				<em>© Copyright 2013 Di Legno. All rights reserved.</em></p>
 			</div>
 		</div>
 	</div>
+</div>
+	
 
 </body>
 </html>

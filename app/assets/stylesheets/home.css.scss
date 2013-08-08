@@ -7,7 +7,8 @@ body {
 	height: 100%;
 
 	font-family: 'Quicksand', sans-serif;
-	color: #444;
+	font-weight: 550;
+	color: #111;
 }
 
 .my_body {
@@ -23,9 +24,9 @@ body {
 	border-bottom: none;
 	overflow-x: hidden;
 	overflow-y: auto;
-	-webkit-box-shadow: 0 0 30px rgba(0,0,0,.3);
+	/*-webkit-box-shadow: 0 0 30px rgba(0,0,0,.3);
 	-moz-box-shadow: 0 0 30px rgba(0,0,0,.3);
-	box-shadow: 0 0 30px rgba(0,0,0,.3);
+	box-shadow: 0 0 30px rgba(0,0,0,.3);*/
 
 	
 }
@@ -53,35 +54,44 @@ body {
 
 .dilegno_footer {
 	width: 960px;
-	/*background: #151515;*/
-	/*background: #453823;*/
-	/*background: #F8E7B6;*/
-	color: #444;
-	/*padding: 0px 0px 20px 0px;*/
+	height: auto;
+	/*float:left;*/
+	background-color: #744e1b;
 	font-size: 12px;
-	line-height: 15px;
+	line-height: 14px;
 
-	margin-bottom: 0px;
-	-moz-box-shadow: 0px 0px 10px #999;
-	-webkit-box-shadow: 0px 0px 20px #999;
-	box-shadow: 0 0 20px #999;
+	color:#fff;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.dilegno_footer_white {
+	width: 960px;
+	/*background: #744e1b;*/
+	/*color: #000000;*/
+	/*float: left;*/
+	/*padding: 0px 0px 10px 0px;*/
+	font-size: 14px;
 
 	margin-right: auto;
 	margin-left: auto;
 }
 
 .dilegno_footer_container {
-	width: 960px;
-	margin-top: 20px;
-	padding: 0px 0px 0px 40px;
+	/*width: 960px;*/
+	background-color: #744e1b;
 }
 
 .dilegno_footer_left {
-	width:640px;
+	text-align: left;
+	padding: 5px 0px 0px 40px;
+	background-color: #744e1b;
+	width:960px;
 	height:100%;
 	float: left;	
 	display: table;
 }
+
 
 .dilegno_footer_left_img {
 	padding-top: 30px;
@@ -100,27 +110,9 @@ body {
 }
 
 .dilegno_footer_copyright {
-	padding: 10px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 	width: 960px;
 	float:left;
-}
-
-.dilegno_footer_white {
-	width: 960px;
-	background: #ffffff;
-	color: #000000;
-	/*float: left;*/
-	/*padding: 0px 0px 10px 0px;*/
-	font-size: 12px;
-	line-height: 15px;
-
-	margin-bottom: 0px;
-	-moz-box-shadow: 0px 0px 20px #999;
-	-webkit-box-shadow: 0px 0px 20px #999;
-	box-shadow: 0 0 20px #999;
-
-	margin-right: auto;
-	margin-left: auto;
 }
 
 .dilegno_footer > a:link {color:#000;}      /* unvisited link */
@@ -141,9 +133,9 @@ body {
 .about_info_section {
 	margin: 0px 0px 20px 0px;
 	background: white;
-	-moz-box-shadow: 0 0 1px #999;
+	/*-moz-box-shadow: 0 0 1px #999;
 	-webkit-box-shadow: 0 0 1px #999;
-	box-shadow: 0 0 1px #999;
+	box-shadow: 0 0 1px #999;*/
 }
 
 .about_info_section_header {
@@ -158,6 +150,6 @@ body {
 .about_info_section_content {
 	padding: 15px 35px 15px 35px;
 	margin: 0px 10px 0px 10px;
-	font-size: 12px;
+	font-size: 13px;
 	text-align: justify;
 }

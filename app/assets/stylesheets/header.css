@@ -4,44 +4,47 @@ Description: CSS file for the everything headers
 
 .header_div{
 	width: 960px;
-	height: 65px;
-	/*background: #744e1b;*/
+	height: 50px;
+	background: #744e1b;
 	/*background: #F8E7B6;*/
 	margin-right: auto;
 	margin-left: auto;
 	color: #444;
-	margin-bottom: 15px;
-	margin-top: 10px;
+	/*margin-bottom: 15px;*/
+	/*margin-top: 10px;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .header_logo_div {
 	width: 200px;
-	height: 65px;
+	height: 50px;
 	float:left;
 
 	font-size:18px;
 	text-decoration: none;
-	line-height: 60px;
+	line-height: 50px;
 	text-align:center;
 }
 
 .header_nav_div {
 	width: 710px;
-	height: 65px;
+	height: 50px;
 	float:left;
 }
 
 .header_nav_item > a {
 	/*width: 160px;*/
 	padding-left: 60px;
-	height: 65px;
+	height: 50px;
 	float:left;
 	text-align:center;
 
-	font-size:15px;
+	font-size:16px;
 	text-decoration: none;
-	color: #444;
+	color: #ddd;
 	line-height: 75px;
+	font-family: 'Quicksand', sans-serif;
 }
 
 /*
@@ -75,10 +78,11 @@ CSS for secondary header bar
 	padding-left: 100px;
 	float:left;
 
-	font-size:13px;
+	font-size:15px;
 	text-decoration: none;
-	color: #444;
+	color: #333;
 	line-height: 35px;
+	font-weight: 600;
 }
 
 .header_sec_nav_div {
@@ -102,15 +106,20 @@ CSS for secondary header bar
 	line-height: 60px;
 }
 
+.header_sec_logo_div > a {
+	font-size: 15px;
+	font-weight: 600;
+}
+
 .header_logo_div > a:link {color:#000;}      
 .header_logo_div > a:visited {color:#000;}
 .header_logo_div > a:hover {color:#000;}  
 .header_logo_div > a:active {color:#000;} 
 
-.header_sec_logo_div > a:link {color:#444;}      
-.header_sec_logo_div > a:visited {color:#444;}
-.header_sec_logo_div > a:hover {color:#444;}  
-.header_sec_logo_div > a:active {color:#444;} 
+.header_sec_logo_div > a:link {color:#000;}      
+.header_sec_logo_div > a:visited {color:#000;}
+.header_sec_logo_div > a:hover {color:#000;}  
+.header_sec_logo_div > a:active {color:#000;} 
 
 .header_sec_nav_item > a:link {color:#FFF;}      
 .header_sec_nav_item > a:visited {color:#FFF;}
