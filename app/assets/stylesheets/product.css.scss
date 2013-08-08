@@ -19,9 +19,9 @@
 	border-bottom: none;
 	overflow-x: hidden;
 	overflow-y: auto;
-	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.3);
-	-moz-box-shadow: 0 0 4px rgba(0,0,0,.3);
-	box-shadow: 0 0 4px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 0 0px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 0px rgba(0,0,0,.3);
+	box-shadow: 0 0 0px rgba(0,0,0,.3);
 }
 
 .product_info {
@@ -31,7 +31,7 @@
 }
 
 .product_info_section {
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 20px 0px;
 	background: white;
 	-moz-box-shadow: 0 0 1px #999;
 	-webkit-box-shadow: 0 0 1px #999;

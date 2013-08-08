@@ -3,20 +3,20 @@ Description: CSS file for the main page.
 */
 
 .slider_div {
-	height: 440px;
+	height: 550px;
 	/*background: #151515;*/
     /*background: #453823;*/
-    background: #111;
+    /*background: #111111;*/
 	padding: 0px 0px 0px 0px;
     margin-bottom: 0px;
-	/*-moz-box-shadow: 0px 0px 20px #999;*/
-	/*-webkit-box-shadow: 0px 0px 20px #999;*/
-	/*box-shadow: 0 0 20px #999;*/
+	-webkit-box-shadow: 0 0 300px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0 300px rgba(0,0,0,.3);
+    box-shadow: 0 0 300px rgba(0,0,0,.3);
 }
 
 .kwicks {
     width: 960px;
-    height: 440px;
+    height: 550px;
     margin-right: auto;
     margin-left: auto;
     vertical-align:middle;
@@ -24,15 +24,15 @@ Description: CSS file for the main page.
 
 .kwicks > li {
     width: 125px;
-    height: 440px;
-    background-color: #111;
+    height: 550px;
+    background-color: #222;
     /* overridden by kwicks but good for when JavaScript is disabled */
     margin-left: 5px;
     float: left;
 }
 
 img.slider_img {
-    height: 440px;
+    height: 550px;
     width: 960px;
     /*max-width: 1100px;*/
 }

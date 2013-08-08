@@ -22,10 +22,10 @@
 
 .product_div {
 	height: auto;
-	width: 212px;
-	margin:2px;
+	width: 218px;
+	margin: 2px;
 	background: #fff;
-	padding: 2px;
+	padding: 0px;
 	margin-bottom: 10px;
 	-moz-box-shadow: 0 0 1px #999;
 	-webkit-box-shadow: 0 0 1px #999;
@@ -39,10 +39,10 @@
 
 .product_img {
 	display:block;
-	padding:4px;
+	padding: 0px;
 	margin-left: auto;
   margin-right: auto;
-  height:212px;
+  height:218px;
 	-moz-box-shadow: 0 0 0px #999;
 	-webkit-box-shadow: 0 0 0px #999;
 	box-shadow: 0 0 0px #999;
@@ -52,9 +52,9 @@
 
 .product_img img {
 	height:auto; 
-	max-height:202px; 
+	max-height:218px; 
 	width:auto;
-	max-width:202px;  
+	max-width:218px;  
 
 	display:block; 
 	position:absolute; 
