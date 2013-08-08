@@ -70,3 +70,6 @@ gem 'galleria-rails', github: 'albandiguer/galleria-rails'
 
 # ckeditor
 gem 'ckeditor'
+
+# new relic
+gem 'newrelic_rpm'
