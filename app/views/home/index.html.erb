@@ -4,14 +4,14 @@
 
 		<!-- change to loop from featured images -->
     <% if @featured_images[0] != nil %>
-      <li class='kwicks-selected'><img style="max-width:1100px  " src="<%= @featured_images[0].dilegno_image.image.url %>"></li>
+      <li class='kwicks-selected'><img class="kwicks_image" src="<%= @featured_images[0].dilegno_image.image.url %>"></li>
     <% else %>
-      <li class='kwicks-selected'><img style="max-width:1100px  " src=""></li>
+      <li class='kwicks-selected'><img class="kwicks_image" src=""></li>
     <% end %>
 
     <% if @featured_images.length > 1 %>
       <% 1.upto(@featured_images.length - 1).each do |i| %>
-        <li><img style="max-width:1100px  " src="<%= @featured_images[i].dilegno_image.image.url %>" style=""></li>
+        <li><img class="kwicks_image" src="<%= @featured_images[i].dilegno_image.image.url %>" style=""></li>
       <% end %>
     <% end %>
   </ul>
@@ -22,12 +22,12 @@
   $(function() {
     var $slideshow = $('.kwicks').kwicks({
       size: 275,
-      minSize : 50,
+      minSize : 20,
       spacing : 5
     });
 
     var numSlides = $slideshow.children().length,
-      speed = 2000,
+      speed = 3500,
       curSlide = 0;
 
 

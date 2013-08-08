@@ -24,7 +24,7 @@ Description: CSS file for the main page.
 .kwicks > li {
     width: 125px;
     height: 640px;
-    background-color: #ccc;
+    background-color: #111;
     /* overridden by kwicks but good for when JavaScript is disabled */
     margin-left: 5px;
     float: left;
