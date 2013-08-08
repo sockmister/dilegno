@@ -3,41 +3,38 @@ Description: CSS file for the everything headers
 */
 
 .header_div{
-	width: 1200px;
-	height: 75px;
+	width: 960px;
+	height: 65px;
 	background: #744e1b;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 .header_logo_div {
-	width: 250px;
-	height: 75px;
+	width: 200px;
+	height: 65px;
 	float:left;
 
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size:25px;
+	font-size:18px;
 	text-decoration: none;
-	color: black;
 	line-height: 60px;
 	text-align:center;
 }
 
 .header_nav_div {
-	width: 950px;
-	height: 75px;
+	width: 710px;
+	height: 65px;
 	float:left;
 }
 
 .header_nav_item > a {
 	/*width: 160px;*/
-	padding-left: 70px;
-	height: 75px;
+	padding-left: 60px;
+	height: 65px;
 	float:left;
 	text-align:center;
 
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size:18px;
+	font-size:15px;
 	text-decoration: none;
 	color: #ffffff;
 	line-height: 75px;
@@ -47,7 +44,7 @@ Description: CSS file for the everything headers
 CSS for secondary header bar 
 */
 .header_sec_div {
-	height: 60px;
+	height: 35px;
 	/*background: #744e1b;*/
 	/*background: #ba986b;*/
 	background: #453823;
@@ -55,26 +52,27 @@ CSS for secondary header bar
 	-moz-box-shadow: 0px 0px 20px #999;/*
 	-webkit-box-shadow: 0px 0px 20px #999;
 	box-shadow: 0 0 20px #999;*/
+
 }
 
 .header_sec_content {
 	width: 1200px;
-	height: 60px;
+	height: 35px;
 	margin-right: auto;
 	margin-left: auto;
+	color: #FFFFFF;
 }
 
 .header_sec_logo_div {
 	width: 950px;
-	height: 60px;
+	height: 35px;
 	padding-left: 100px;
 	float:left;
 
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size:20px;
+	font-size:13px;
 	text-decoration: none;
 	color: #FFFFFF;
-	line-height: 60px;
+	line-height: 35px;
 }
 
 .header_sec_nav_div {
@@ -82,34 +80,33 @@ CSS for secondary header bar
 	margin-left: auto;
 
 	width: 950px;
-	height: 60px;
+	height: 35px;
 	float:left;
 }
 
 .header_sec_nav_item > a {
 	width: 160px;
-	height: 60px;
+	height: 35px;
 	float:right;
 	text-align:center;
 
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size:18px;
+	font-size:1px;
 	text-decoration: none;
 	color: #FFFFFF;
 	line-height: 60px;
 }
 
-.header_logo_div > a:link {color:#000;}      /* unvisited link */
-.header_logo_div > a:visited {color:#000;}  /* visited link */
-.header_logo_div > a:hover {color:#000;}  /* mouse over link */
-.header_logo_div > a:active {color:#000;}  /* selected link */
+.header_logo_div > a:link {color:#000;}      
+.header_logo_div > a:visited {color:#000;}
+.header_logo_div > a:hover {color:#000;}  
+.header_logo_div > a:active {color:#000;} 
 
-.header_sec_logo_div > a:link {color:#FFF;}      /* unvisited link */
-.header_sec_logo_div > a:visited {color:#FFF;}  /* visited link */
-.header_sec_logo_div > a:hover {color:#FFF;}  /* mouse over link */
-.header_sec_logo_div > a:active {color:#FFF;}  /* selected link */
+.header_sec_logo_div > a:link {color:#FFF;}      
+.header_sec_logo_div > a:visited {color:#FFF;}
+.header_sec_logo_div > a:hover {color:#FFF;}  
+.header_sec_logo_div > a:active {color:#FFF;} 
 
-.header_sec_nav_item > a:link {color:#FFF;}      /* unvisited link */
-.header_sec_nav_item > a:visited {color:#FFF;}  /* visited link */
-.header_sec_nav_item > a:hover {color:#FFF;}  /* mouse over link */
-.header_sec_nav_item > a:active {color:#FFF;}  /* selected link */
+.header_sec_nav_item > a:link {color:#FFF;}      
+.header_sec_nav_item > a:visited {color:#FFF;}
+.header_sec_nav_item > a:hover {color:#FFF;}  
+.header_sec_nav_item > a:active {color:#FFF;} 

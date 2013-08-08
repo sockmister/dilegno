@@ -13,9 +13,6 @@
 <!-- sub-categories grid view -->
 <div class ="product_content">
 	<div class = "product_container">
-		<% if @category.name == "Home Accessories" %>
-			<h3> Coming Soon. </h3>
-		<% end %>
 		<% if @sub_category.count > 0 %>
 			<% @sub_category.each do |cat| %>
 				<div class="product_div">
@@ -32,7 +29,7 @@
 					<!-- sub_category excerpt -->
 					<div class ="product_text">
 						<a href = <%= sub_category_path(cat.id) %>>
-						<h4> <%= cat.name %> </h4> </a>
+						<p> <%= cat.name %> </p> </a>
 					</div>
 				</div>
 			<% end %>
@@ -55,9 +52,9 @@
 					<div class ="product_text">
 						<a href = <%= product_path(product.id) %>>
 						<% if product.name.length >= 24 %>
-							<h4><%= product.name[0..24].gsub(/\s\w+$/, '...') %> </h4> 
+							<p><%= product.name[0..24].gsub(/\s\w+$/, '...') %> </p> 
 						<% else %>
-							<h4><%= product.name %> </h4> 
+							<p><%= product.name %> </p> 
 						<% end %>
 					</div>
 				</div>
@@ -67,27 +64,4 @@
 	</div>
 </div>
 
-<% if false %>
-<!-- products for that category -->
-<div class="product_content">
-	<div class="product_container">
-	<% @products.each do |product| %>
-		<div class="product_div">
-			<!-- product thumbnail -->
-			<div class="product_img">
-				<!-- link -->
-				<a href = <%= product_path(product.id) %>>
-					<%= image_tag product.product_images[0].image.url %>
-				</a>
-			</div>
 
-			<!-- product excerpt --> 
-			<div class="product_text">
-				<p style="padding: 5px"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt, nisi vitae lobortis tristique, nisl nisi aliquam nisl, ... </p>
-			</div>
-		</div>
-	<% end %>
-	</div>
-</div>
-
-<% end %>

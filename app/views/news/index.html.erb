@@ -12,8 +12,12 @@
 
 <div class="news_item">
 	<% @news.each do |news_item| %>
-		<h2> <%= news_item.title %> </h2>
-		<p> <%= news_item.content.html_safe %> </p>
+		<div class="news_item_title">
+			<h6> <%= news_item.title %> </h6>
+		</div>
+		<div class="news_item_content">
+			<p> <%= news_item.content.html_safe %> </p>
+		</div>
 		<div class="news_footer">
 			<p> <em> Posted on: <%= news_item.created_at.strftime("%m/%d/%Y %I:%M %p") %> </em><p>
 		</div>
