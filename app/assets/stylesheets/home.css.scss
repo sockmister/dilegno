@@ -34,6 +34,21 @@ body {
     max-width: 860px;
 }
 
+.kwicks_image {
+	height:auto; 
+	max-height:640px; 
+	width:auto;
+	max-width:1100px;  
+
+	display:block; 
+	position:absolute; 
+	top:0; 
+	bottom:0; 
+	left:0; 
+	right:0; 
+	margin:auto;
+}
+
 .dilegno_footer {
 	width: 960px;
 	/*background: #151515;*/
