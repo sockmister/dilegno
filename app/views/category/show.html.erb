@@ -21,7 +21,7 @@
 					<div class="product_img">
 						<!-- sub_category link -->
 						<a href = <%= sub_category_path(cat.id) %>>
-							<img src="<%= cat.dilegno_image.image.url(:medium) %>" >
+							<img src="<%= cat.dilegno_image.image.url(:thumb) %>" >
 						</a>
 					</div>
 					
@@ -42,7 +42,7 @@
 						<!-- sub_category link -->
 						<a href = <%= product_path(product.id) %>>
 							<% if product.dilegno_images.count > 0 %>
-								<img src="<%= product.dilegno_images[0].image.url(:medium) %>" >
+								<img src="<%= product.dilegno_images[0].image.url(:thumb) %>" >
 							<% end %>
 						</a>
 					</div>

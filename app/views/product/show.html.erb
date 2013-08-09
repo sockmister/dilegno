@@ -13,7 +13,7 @@
 	<div class="product_image">
 		<div id="galleria">
 			<% @product_images.each do |image| %>
-				<%= image_tag(image.image.url, :class => "product_galleria") %>
+				<%= image_tag(image.image.url(:medium), :class => "product_galleria") %>
 			<% end %>
 		</div>
 	</div>
