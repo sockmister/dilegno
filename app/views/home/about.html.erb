@@ -51,16 +51,16 @@
 		</div>
 
 		<div class="about_info_section_content_right">
-			<br>
+			<h6> Contact Us </h6>
 			<!-- form for contact us -->
 			<%= form_tag '/contact_us', method: :post do %>
-		    <%= label_tag :email, "Your Email" %>
+		    <%= label_tag :email, "Your Email", :style => "font-size: 13px" %>
 		    <%= email_field_tag :email, params[:email] %>
 
-		    <%= label_tag :subject %>
+		    <%= label_tag :subject, "Subject", :style => "font-size: 13px" %>
 		    <%= text_field_tag :subject, params[:subject] %>
 
-		    <%= label_tag :message %>
+		    <%= label_tag :message, "Message",  :style => "font-size: 13px" %>
 		    <%= text_area_tag :message, params[:message] %>
 
 		    <%= label_tag :comments, "If you are human, leave blank.", :style => "display :none" %>
@@ -69,6 +69,19 @@
 			<% end %>
 		</div>
 	</div>
+	<div class="about_info_section_content" style="float:left">
+		<h6> Newsletter </h6>
+		<p> Join our mailing list to stay updated. </p>
+		<%= form_tag '/newsletter', method: :post do %>
+			<%= label_tag :email, "Your Email", :style => "font-size: 13px" %>
+			<%= email_field_tag :email, params[:email] %>
+
+			<%= label_tag :comments, "If you are human, leave blank.", :style => "display :none" %>
+			<%= text_area_tag :comments, params[:comments], :style => "display: none" %>
+
+			<%= submit_tag "Sign up", :class => "btn", :style => "margin-bottom: 10px" %>
+		<% end %>
+	</div> 
 </div>
 </div>
 </div>

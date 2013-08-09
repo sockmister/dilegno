@@ -11,7 +11,9 @@ Dilegno::Application.routes.draw do
   resources :sub_category
   resources :product
   resources :news
+
   post "contact_us" => "users#contact_us", :as => "contact_us"
+  post "newsletter" => "users#newsletter", :as => "newsletter"
 
 	namespace :admin do
     get "login" => "sessions#new", :as => "log_in"
