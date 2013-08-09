@@ -19,3 +19,4 @@
 //= require galleria-1.2.9.min
 //= require galleria.classic.min
 //= require ckeditor/init
+//= require turbolinks

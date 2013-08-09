@@ -73,3 +73,6 @@ gem 'ckeditor'
 
 # new relic
 gem 'newrelic_rpm'
+
+# turbolinks
+gem 'turbolinks'
