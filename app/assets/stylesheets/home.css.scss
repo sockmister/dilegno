@@ -153,3 +153,17 @@ body {
 	font-size: 13px;
 	text-align: justify;
 }
+
+.about_info_section_content_left {
+	width: 360px;
+	float: left;
+}
+
+.about_info_section_content_right {
+	width: 330px;
+	float: left;
+}
+
+.about_info_section_content_right > form {
+	font-size: 13px;
+}

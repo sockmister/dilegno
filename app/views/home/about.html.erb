@@ -37,16 +37,35 @@
 		<strong>Find Us</strong>
 	</div>
 	<div class="about_info_section_content">
-		<h6> Address</h6>
-		<p> 188-6 Tanjong Katong Road <br>
-			Singapore 436990 </p>
+		<div class="about_info_section_content_left">
+			<h6> Address</h6>
+			<p> 188-6 Tanjong Katong Road <br>
+				Singapore 436990 </p>
+				<br>
+			<h6> Opening Hours </h6>
+			<p> Monday to Sunday, 11am to 7pm </p>
 			<br>
-		<h6> Opening Hours </h6>
-		<p> Monday to Sunday, 11am to 7pm </p>
-		<br>
-		<h6> Contact </h6>
-		<p> Call us: +65 6346 2012 </p> 
-		<p> Email us: <%= mail_to("info@dilegno.sg") %> </p>
+			<h6> Contact </h6>
+			<p> Call us: +65 6346 2012 </p> 
+			<p> Email us: <%= mail_to("info@dilegno.sg") %> </p>
+		</div>
+
+		<div class="about_info_section_content_right">
+			<br>
+			<!-- form for contact us -->
+			<%= form_tag '/contact_us', method: :post do %>
+		    <%= label_tag :email, "Your Email" %>
+		    <%= email_field_tag :email, params[:email] %>
+
+		    <%= label_tag :subject %>
+		    <%= text_field_tag :subject, params[:subject] %>
+
+		    <%= label_tag :message %>
+		    <%= text_area_tag :message, params[:message] %>
+		    <p><%= submit_tag "Submit", :class => "btn"%></p>
+			<% end %>
+		</div>
+
 	</div>
 </div>
 </div>
