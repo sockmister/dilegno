@@ -62,10 +62,12 @@
 
 		    <%= label_tag :message %>
 		    <%= text_area_tag :message, params[:message] %>
+
+		    <%= label_tag :comments, "If you are human, leave blank.", :style => "display :none" %>
+		    <%= text_area_tag :comments, params[:comments], :style => "display: none" %>
 		    <p><%= submit_tag "Submit", :class => "btn"%></p>
 			<% end %>
 		</div>
-
 	</div>
 </div>
 </div>
