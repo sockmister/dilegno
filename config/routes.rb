@@ -8,6 +8,7 @@ Dilegno::Application.routes.draw do
   resources :sub_category
   resources :product
   resources :news
+  resources :press_releases
   resources :abouts
 
   get "sessions/new"

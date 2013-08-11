@@ -34,6 +34,10 @@ Description: CSS file for the everything headers
 }
 
 .header_nav_item > a {
+	color: #fff;
+}
+
+.header_nav_item {
 	/*width: 160px;*/
 	padding-left: 30px;
 	padding-right: 30px;
@@ -46,6 +50,33 @@ Description: CSS file for the everything headers
 	color: #fff;
 	line-height: 75px;
 }
+
+.header_nav_item>.dropdown-menu>li>a {
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: normal;
+	line-height: 20px;
+	color: #fff;
+	background: #744e1b;
+	white-space: nowrap;
+	font-weight: 600;
+
+	border-top: ;
+}
+
+.header_nav_item>.dropdown-menu>li>a:hover, 
+.header_nav_item>.dropdown-menu>li>a:focus, 
+.header_nav_item>.dropdown-submenu:hover>a, 
+.header_nav_item>.dropdown-submenu:focus>a {
+	text-decoration: none;
+	color: #333;
+	background-color: #F8E7B6;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+
+
 
 /*
 CSS for secondary header bar 
@@ -62,6 +93,11 @@ CSS for secondary header bar
 	-webkit-box-shadow: 0px 0px 20px #999;
 	box-shadow: 0 0 20px #999;*/
 
+}
+
+.header_nav_div>.open>.dropdown-menu {
+	display: block;
+	background: #744e1b;
 }
 
 .header_sec_content {

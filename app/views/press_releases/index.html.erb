@@ -1,0 +1,33 @@
+<!-- sub-categories header -->
+<% content_for :secondary_header do %>
+	<div class="header_sec_div">
+		<div class="header_sec_content">
+
+			<div class="header_sec_logo_div">
+				Press Releases
+			</div>
+		</div>
+	</div>	
+<% end %>
+
+<div class ="press_content">
+	<div class = "press_container">
+		<% @press.each do |p| %>
+		<div class="press_div">
+			<!-- sub_category thumbnail -->
+			<div class="press_img">
+				<!-- sub_category link -->
+				<a href = <%= p.document.url %>>
+					<img src="<%= p.dilegno_image.image.url(:thumb) %>" >
+				</a>
+			</div>
+
+			<!-- sub_category excerpt -->
+			<div class ="press_text">
+				<a href = "" %>
+				<p> <%= p.title %> </p> </a>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
