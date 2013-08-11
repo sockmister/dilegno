@@ -61,8 +61,6 @@ Description: CSS file for the everything headers
 	background: #744e1b;
 	white-space: nowrap;
 	font-weight: 600;
-
-	border-top: ;
 }
 
 .header_nav_item>.dropdown-menu>li>a:hover, 
