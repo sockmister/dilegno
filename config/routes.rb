@@ -1,17 +1,17 @@
 Dilegno::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  get 'about', to: 'home#about'
+  # get 'about', to: 'home#about'
   get "/" => "home#index"
-
-  get "sessions/new"
-  get "admin_users/new"
 
   resources :category
   resources :sub_category
   resources :product
   resources :news
+  resources :abouts
 
+  get "sessions/new"
+  get "admin_users/new"
   post "contact_us" => "users#contact_us", :as => "contact_us"
   post "newsletter" => "users#newsletter", :as => "newsletter"
 
@@ -26,6 +26,8 @@ Dilegno::Application.routes.draw do
   	resources :product
     resources :news
     resources :administrative_user
+    resources :press_releases
+    resources :abouts
     resources :category do
       resources :sub_category
     end

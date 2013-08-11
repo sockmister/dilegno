@@ -38,6 +38,10 @@
 	          	<%= link_to "Product", :controller => "product", :action => "index" %></li>
 	          <li class="<%= controller.class == Admin::NewsController ? 'active' : '' %>">	
 	          	<%= link_to "News", :controller => "news", :action => "index" %></li>
+	          <li class="<%= controller.class == Admin::PressReleasesController ? 'active' : '' %>">	
+	          	<%= link_to "Press", :controller => "press_releases", :action => "index" %></li>
+	          <li class="<%= controller.class == Admin::AboutsController ? 'active' : '' %>">	
+	          	<%= link_to "About", :controller => "abouts", :action => "index" %></li>
 	          <li><a href="#"></a></li>
 
 	          <li class="nav-header">Miscellaneous</li>

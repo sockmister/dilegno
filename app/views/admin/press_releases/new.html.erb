@@ -1,0 +1,40 @@
+<div class="heading">
+  <h1>Your Press Releases</h1>
+</div>
+
+<!-- create a form for categories-->
+<div>
+	<legend> Add a new press release </legend> 
+<%= form_for @press, :url => { :action => "create" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :document, "Press document (pdf)" %>
+	<div class="fileupload fileupload-new" data-provides="fileupload">
+    <div class="input-append">
+      <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> 
+        <span class="fileupload-preview"></span>
+      </div>
+      <span class="btn btn-file">
+      <span class="fileupload-new">Select file</span>
+      <span class="fileupload-exists">Change</span>
+      <input type="file" name="press_release[document]"/></span>
+      <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+    </div>
+  </div>
+
+  <%= f.label :dilegno_image, "Document representative image" %>
+  <div class="fileupload fileupload-new" data-provides="fileupload">
+    <div class="fileupload-preview thumbnail" style="width: 159px; height: 210px;"></div>
+    <div>
+      <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" id="" name="dilegno_image[image]" /></span>
+      <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+    </div>
+  </div>
+
+  <%= f.submit "Add press release", :class => "btn btn-primary"%>
+  <%= link_to "Cancel", {:controller => "press_releases", :action => "index"}, :class => "btn btn-primary"  %>
+<% end %>
+
+
+</div>

@@ -1,0 +1,22 @@
+<div class="heading">
+  <h1>Your About Content</h1>
+</div>
+
+<!-- create a form for categories-->
+<div>
+	<legend> Add a new press release </legend> 
+<%= form_for @about, :url => { :action => "create" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.cktext_area :content %>
+
+  <br>
+
+  <%= f.submit "Add about section", :class => "btn btn-primary"%>
+  <%= link_to "Cancel", {:controller => "abouts", :action => "index"}, :class => "btn btn-primary"  %>
+<% end %>
+
+
+</div>

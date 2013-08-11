@@ -10,27 +10,17 @@
 
 <div class="about_container">
 <div class="about_info">
-<div class="about_info_section">
-	<div class="about_info_section_header">
-		<strong>About Us</strong>
-	</div>
-	<div class="about_info_section_content">
-		<p> Di Legno is... </p>
-	</div>
-</div>
 
-<div class="about_info_section">
+<% @about.each do |a| %>
+	<div class="about_info_section">
 	<div class="about_info_section_header">
-		<strong>The Designer</strong>
+		<strong><%= a.title if a.title %></strong>
 	</div>
 	<div class="about_info_section_content">
-		<p> Vito Selma is a Filipino designer that has been featured in magazines worldwide, such as those of China, India, Australia, Portugal and the USA. </p>
-		<p> His works are based on the belief that simplicity is the most complex design. </p>
-		<p> Hence, wood is his choice material, and he is not afraid to show the nakedness of wood grain and texture. </p>
-		<p> For his works, Vito Selma has won many awards. His furniture is sold in more than 30 countries of differing regions, such as Europe, Asia and the Middle East. </p>
-		<p> Di Legno is the first and only shop in Singapore to sell his works. </p>
+		<%= a.content.html_safe if a.content %>
 	</div>
 </div>
+<% end %>
 
 <div class="about_info_section">
 	<div class="about_info_section_header">
