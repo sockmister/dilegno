@@ -19,6 +19,20 @@
 	text-align: justify;
 }
 
+.new_item_content > p > img {
+	height:auto !important; 
+	max-height:2000px; 
+	width:auto !important;
+	max-width:700px;  
+
+	display:block; 
+	top:0; 
+	bottom:0; 
+	left:0; 
+	right:0; 
+	margin:auto;
+}
+
 .news_footer{
 	margin: 20px 0px 70px 0px;
 	color:#555;

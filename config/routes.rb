@@ -29,6 +29,7 @@ Dilegno::Application.routes.draw do
     resources :administrative_user
     resources :press_releases
     resources :abouts
+    resources :users
     resources :category do
       resources :sub_category
     end

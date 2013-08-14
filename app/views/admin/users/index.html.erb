@@ -1,0 +1,21 @@
+<div class="heading">
+  <h1>Mailing List</h1>
+</div>
+
+<table class="table">
+	<thead>
+		<th> # </th>
+		<th> Email Address </th>
+	</thead>
+	<tbody>
+		<% count = 1 %>
+		<% @users.each do |user| %>
+			<tr>
+				<td> <%= count %> </td>
+				<td> <%= user.email %> </td>
+				<td> <%= link_to (raw("<i class=\"icon-remove\"></i>")), admin_user_path(user), :method => :delete, :confirm => "Delete email?", :class => "btn btn-primary"%> </td>
+			</tr>
+			<% count = count + 1 %>
+		<% end %>
+	</tbody>
+</table>
