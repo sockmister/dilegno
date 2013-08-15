@@ -51,7 +51,7 @@ gem 'turnout'
 gem "bcrypt-ruby", :require => "bcrypt"
 
 # Color picker for products
-gem 'bootstrap-colorpicker-rails'
+# gem 'bootstrap-colorpicker-rails'
 
 # twitter bootstrap + dependencies
 gem 'jquery-rails'
@@ -76,3 +76,6 @@ gem 'newrelic_rpm'
 
 # turbolinks
 gem 'turbolinks'
+
+# fancybox
+gem 'fancybox-rails'

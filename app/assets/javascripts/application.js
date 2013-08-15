@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require ckeditor/init
+//= require fancybox
 //= require_tree .
 //= require jasny-bootstrap
-//= require bootstrap-colorpicker
 //= require galleria-1.2.9.min
 //= require galleria.classic.min
-//= require ckeditor/init
 //= require turbolinks

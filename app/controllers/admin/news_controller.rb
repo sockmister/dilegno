@@ -8,7 +8,13 @@ class Admin::NewsController < AdminController
 	end
 
 	def create
-		@news = News.new(params[:news])
+		@news = News.create(params[:news])
+
+		if params[:dilegno_image]
+			params[:dilegno_image].each_value { |img| 
+				@news.dilegno_images.create(img)
+			}
+		end
 		@news.save
 		redirect_to :action => "index"
 	end
@@ -21,6 +27,25 @@ class Admin::NewsController < AdminController
 		@news = News.find(params[:id])
 		@news.title = params[:news][:title]
 		@news.content = params[:news][:content]
+
+		# for each existing dilegno_image, we check if there is corresponding hidden value
+		# if yes, we skip
+		# else we delete
+		if @news.dilegno_images
+			@news.dilegno_images.each do |img|
+				unless params["dilegno#{img.id}"]
+					img.delete
+				end
+			end
+		end
+
+		# we build for new images
+		if params[:dilegno_image]
+			params[:dilegno_image].each_value { |img| 
+				@news.dilegno_images.create(img)
+			}
+		end
+
 		@news.save
 		redirect_to :action => "index"
 	end

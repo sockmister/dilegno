@@ -18,8 +18,27 @@
 		<div class="news_item_content">
 			<p> <%= news_item.content.html_safe %> </p>
 		</div>
+
+		<% if news_item.dilegno_images %>
+			<div class="news_image_container">
+			<% news_item.dilegno_images.each do |img|  %>
+				<div class="news_image_overall_div">
+					<div class="news_image_img">
+						<a href="<%= img.image.url(:medium) %>" class="fancybox" rel="<%= news_item.id %>"><img src="<%= img.image.url(:thumb) %>"></img></a>
+					</div>
+				</div>
+			<% end %>
+			</div>
+		<% end %>
+
 		<div class="news_footer">
 			<p> <em> Posted on: <%= news_item.created_at.strftime("%m/%d/%Y %I:%M %p") %> </em><p>
 		</div>
 	<% end %>
 </div>
+
+<script>
+jQuery(function() {
+  $("a.fancybox").fancybox();
+});
+</script>

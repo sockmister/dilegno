@@ -5,18 +5,66 @@
 <!-- create a form for categories-->
 <div>
 	<legend> Edit </legend> 
-<%= form_for [:admin, @news] do |f| %>
+<%= form_for @news, :url => { :action => "update" }, :html => { :multipart => true, :enctype => "multipart/form-data" } do |f| %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>
 
   <%= f.label :content %>
-  <%= f.cktext_area :content %>
+	<%= f.cktext_area :content %>
 
-</br>
+	<br>
+	
+  <%= f.label :existing_image, "Your Existing Images" %>
+  <% if @news.dilegno_images.count == 0 %>
+    <p> There are no existing images. </p>
+  <% end %>
+  <div class="existing_image_manage span9">
+  <% @news.dilegno_images.each do |img| %>
+    <div class="existing_image">
+      <div class="fileupload-preview thumbnail" style="width: 200px; height: 200px;">
+        <img src="<%=img.image.url(:thumb) %>">
+      </div>          
+      <button type="button" class="btn btn-default remove_existing">Remove existing image</button>
+      <input type="hidden" value="<%= img.id %>" name ="<%= "dilegno#{img.id}" %>">
+    </div>
+  <% end %>
+	</div>
+
+	
+  <%= f.label :image, "Add Product Images" %>
+  <div class="span9">
+  <div class="image_manage span9" style="margin-left:0px">
+    <p><button type="button" class="btn btn-default" id="add_image">Add Image</button></p>
+  </div>
+	</div>
+  <br/>
+
+<br/>
   <%= f.submit "Update news item", :class => "btn btn-primary"%>
   <%= link_to "Cancel", {:controller => "news", :action => "index"}, :class => "btn btn-primary"  %>
 <% end %>
 
 
 </div>
+
+<script>
+var numOfImages = 0;
+$('#add_image').click(function(){
+  var form = "&lt;div class=&quot;whole_fileupload&quot; style=&quot;float:left&quot;&gt; <br/>  &lt;div class=&quot;fileupload fileupload-new&quot; data-provides=&quot;fileupload&quot;&gt;      <br/>    &lt;div class=&quot;fileupload-preview thumbnail&quot; style=&quot;width: 200px; height: 200px;&quot;&gt;&lt;/div&gt;      <br/>    &lt;div&gt;<br/>      &lt;span class=&quot;btn btn-file&quot;&gt;<br/>        &lt;span class=&quot;fileupload-new&quot;&gt;Select image&lt;/span&gt;<br/>        &lt;span class=&quot;fileupload-exists&quot;&gt;Change&lt;/span&gt;<br/>        &lt;input type=&quot;file&quot; id=&quot;featured_image_image&quot; name=&quot;dilegno_image[image" + numOfImages;
+  form = form + "][image]&quot;&gt;<br/>      &lt;/span&gt;<br/>      &lt;button type=&quot;button&quot; class=&quot;btn btn-default remove_image&quot;&gt;Remove&lt;/button&gt;      <br/>    &lt;/div&gt;    <br/>  &lt;/div&gt;  <br/>&lt;/div&gt;";
+  form = $("<div />").html(form).text();
+  numOfImages = numOfImages + 1;
+
+  $(".image_manage").append(form);
+});
+
+$('body').delegate('.remove_existing', 'click', function() {
+  $(this).closest('.existing_image').remove();
+});
+
+$('body').delegate('.remove_image', 'click', function() {
+  $(this).closest('.whole_fileupload').remove();
+});
+
+</script>

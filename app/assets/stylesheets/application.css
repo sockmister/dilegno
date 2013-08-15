@@ -11,8 +11,8 @@
 	
  
  *= require_self
+ *= require fancybox
  *= require_tree .
  *= require galleria.classic
  *= require jasny-bootstrap
- *= require bootstrap-colorpicker
  */
