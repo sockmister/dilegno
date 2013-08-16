@@ -78,4 +78,5 @@ gem 'newrelic_rpm'
 gem 'turbolinks'
 
 # fancybox
-gem 'fancybox-rails'
+# gem 'fancybox-rails'
+gem 'fancybox2-rails', '~> 0.2.4'
