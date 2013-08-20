@@ -45,6 +45,7 @@
   <% if @product.dilegno_images.count == 0 %>
     <p> You have not existing images for this product! </p>
   <% end %>
+  <div class="existing_image_manage span9">
   <% @product.dilegno_images.each do |img| %>
     <div class="existing_image">
       <div class="fileupload-preview thumbnail" style="width: 200px; height: 200px;">
@@ -54,6 +55,7 @@
       <input type="hidden" value="<%= img.id %>" name ="<%= "dilegno#{img.id}" %>">
     </div>
   <% end %>
+  </div>
 
   <br>
   <%= f.label :image, "Add Product Images" %>
@@ -73,22 +75,7 @@
 
 </div>
 
-<script>
-$('#product_category_id').change(function() {
-  $('.my_hidden').hide();
-  var selected = $(this).find(':selected');
-  // alert('Category Id = ' + selected.val() + ' selected.');
-  $('.'+selected.val()).show();
-
-  //remove name from old input
-  //add name to new input
-  $('input:select[name=""]').attr('name', 'product[sub_category_id]');
-});
-
-$('#cp3').colorpicker({
-  format: 'rgb'
-});
-
+<script>  
 
 var numOfImages = 0;
 $('#add_image').click(function(){
