@@ -4,14 +4,14 @@
 
 		<!-- change to loop from featured images -->
     <% if @featured_images[0] != nil %>
-      <li class='kwicks-selected'><img class="kwicks_image" src="<%= @featured_images[0].dilegno_image.image.url %>"></li>
+      <li class='kwicks-selected'><img class="kwicks_image" src="<%= @featured_images[0].dilegno_image.image.url(:medium) %>"></li>
     <% else %>
       <li class='kwicks-selected'><img class="kwicks_image" src=""></li>
     <% end %>
 
     <% if @featured_images.length > 1 %>
       <% 1.upto(@featured_images.length - 1).each do |i| %>
-        <li><img class="kwicks_image" src="<%= @featured_images[i].dilegno_image.image.url %>" style=""></li>
+        <li><img class="kwicks_image" src="<%= @featured_images[i].dilegno_image.image.url(:medium) %>" style=""></li>
       <% end %>
     <% end %>
   </ul>
